@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Главная страница</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <div class="logo d-flex align-items-center">
+                        <img src="img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="col-9 d-flex justify-content-end">
+                    <a class="header-nav-link">Документация</a>
+                    <a class="header-nav-link" href="#about">О сайте</a>
+                    <a class="header-nav-link">Обучение</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section-hero">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-7">
+                        <h1 class="title">
+                            Разработка сайтов на <span class="red">PHP-фреймворке</span>
+                        </h1>
+                        <p class="hero-text">
+                            Удобный и простой веб справочник по изучению PHP-фреймворка “Laravel”. Полностью бесплатный и полностью на русском языке.
+                        </p>
+                        <div class="hero-btns d-flex">
+                            <a href="#" class="main-btn">К ОБУЧЕНИЮ</a>
+                            <a href="#" class="secondary-btn">ТЕСТИРОВАНИЕ</a>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <img src="img/ойтишник.svg" alt="Программист программирует" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-about" id="about">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-6">
+                        <h2 class="about-title">
+                            О сайте
+                        </h2>
+                        <p class="about-text">
+                            Laravel - это популярный PHP-фреймворк, предназначенный для создания современных, масштабируемых и безопасных веб-приложений. Сайт предоставляет обучающий материал по этому фреймворку. 
+                        </p>
+                        <p class="about-text">
+                            Обучение делится на модули, которые в свою очередь подразделяются на темы. Каждая тема рассматривает тот или иной аспект фреймворка, а также в конце предоставляет возможность пройти тестирование.
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <img src="img/code.svg" class="about-img" alt="Пример ларавель кода">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-videos" id="videos">
+            <div class="container">
+                <h2 class="videos-title">Также <span class="red">рекомендуем</span> посмотреть</h2>
+                <div class="row videos">
+                    <div class="col-6">
+                        <iframe class="video" src="https://www.youtube.com/embed/iniIUcAKuLA?si=KKlJor8F_q3yklB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-6">
+                        <iframe class="video" src="https://www.youtube.com/embed/4RhY1JJgLsM?si=lk_oJg-aJpOd9-hy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <div class="logo d-flex align-items-center">
+                        <img src="img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 d-flex justify-content-end socials">
+                    <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
+                    <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
+                    <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
+                    <a class="footer-nav-link" href="kkostaninkk@gmail.com" target="_blank"><img src="img/socials/google.svg" class="footer-icon" alt="Иконка гугл почты"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
