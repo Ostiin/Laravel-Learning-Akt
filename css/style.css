@@ -47,6 +47,10 @@ h2 {
     font-size: 40px;
 }
 
+h3 {
+    font-size: 28px;
+}
+
 .container {
     max-width: 1100px;
     padding: 0px 20px;
@@ -57,14 +61,29 @@ h2 {
 }
 
 a {
+    transition: all .2s;
     text-decoration: none;
     color: #F13C2F;
+}
+
+a:hover {
+    color: #F13C2F;
+    transform: translateY(-5px);
 }
 
 a:not(:last-child) {
     margin-right: 30px;
 }
 
+li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+/*Обшие кастомные стили*/
 .main-btn, .secondary-btn {
     font-weight: 700;
     display: flex;
@@ -73,6 +92,11 @@ a:not(:last-child) {
     border-radius: 5px;
     width: 220px;
     height: 50px;
+    border: 1px solid #F13C2F;
+}
+
+.main-btn:hover, .secondary-btn:hover {
+    transform: translateY(0);
 }
 
 .main-btn {
@@ -80,8 +104,13 @@ a:not(:last-child) {
     background: #F13C2F;
 }
 
-.secondary-btn {
-    border: 1px solid #F13C2F;
+.main-btn:hover {
+    background: none;
+}
+
+.secondary-btn:hover {
+    color: white;
+    background: #F13C2F;
 }
 
 /*Стили для шапки и подвала*/
@@ -99,6 +128,10 @@ a:not(:last-child) {
     height: 25px;
 }
 
+.logo-lower {
+    font-size: 16px;
+}
+
 .footer-nav-link:not(:last-child) {
     margin-right: 20px;
 }
@@ -107,10 +140,11 @@ a:not(:last-child) {
     margin-left: 0;
 }
 
-/*Section Hero стили*/
+/*ГЛАВНАЯ СТРАНИЦА
+Section Hero стили*/
 .section-hero {
     margin-top: 200px;
-    margin-bottom: 250px;
+    margin-bottom: 280px;
 }
 
 .hero-text {
@@ -150,4 +184,176 @@ a:not(:last-child) {
     width: 100%;
     height: 280px;
     border-radius: 15px;
+    cursor: pointer;
+    background: black;
+}
+
+/*СТРАНИЦА С УРОКАМИ
+стили для секции о модуле*/
+.section-unit {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.unit-text {
+    margin: 30px 0;
+}
+
+.unit-icon {
+    margin-right: 5px;
+}
+
+.unit-info-text:first-child {
+    margin-right: 10px;
+}
+
+.unit-btns {
+    margin-top: 30px;
+}
+
+/*Стили для карточек с уроками*/
+.section-lessons {
+    margin-bottom: 150px;
+}
+
+.lesson-title {
+    margin-bottom: 25px;
+}
+
+.lesson-title:not(:first-child) {
+    margin-top: 50px;
+}
+
+.lesson-card {
+    background-color: #F13C2F;
+    border-radius: 10px;
+}
+
+.lesson-item {
+    padding: 20px 0;
+    margin-left: 20px;
+}
+
+.lesson-item a {
+    color: white;
+}
+
+.lesson-line {
+    margin: 0;
+}
+
+/*СТИЛИ ДЛЯ УРОКОВ*/
+.section-less {
+    margin: 50px 0;
+}
+
+.less-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/*Заголовки*/
+.less-main-subtitle {
+    margin: 30px 0;
+}
+
+.less-title {
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.less-title::before, .less-subtitle::before {
+    content: '# ';
+    color: #F13C2F;
+}
+
+.less-subtitle {
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.less-subtopic:not(:first-child) {
+    margin-top: 40px;
+}
+
+/*Стили абзацев*/
+.less-text {
+    color: #c7c7c7;
+}
+
+/*Стили навигации по уроку*/
+.less-nav-link::before, .less-subnav-link::before {
+    content: '# ';
+    color: #F13C2F;
+}
+
+.less-nav-link {
+    color: white;
+}
+
+.less-subnav-link {
+    color: #c7c7c7;
+    margin-left: 30px;
+}
+
+/*Стили списков урока*/
+.less-item {
+    color: #c7c7c7;
+    font-size: 20px;
+    padding: 0;
+}
+
+.less-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.less-item::before {
+    content: '# ';
+    color: #F13C2F;
+}
+
+/*Стили для изображений урока*/
+.less-img {
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+/*Стили для ссылок в уроке*/
+.less-link {
+    margin: 0 !important;
+}
+
+.less-link:hover {
+    color: #8f0a00;
+}
+
+/*Стили блока с кодом*/
+.code {
+    margin: 25px 0;
+}
+
+.copy-icon-block {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+.copy-icon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.copy-icon:hover path {
+    fill: #979aa5;
+}
+
+.code-block {
+    border-radius: 10px;
+    padding: 20px !important;
 }

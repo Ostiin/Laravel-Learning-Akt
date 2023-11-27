@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
-                    <div class="logo d-flex align-items-center">
+                    <a class="logo d-flex align-items-center" href="index.html">
                         <img src="img/logo.svg" alt="Логотип" class="logo-img">
                         <div class="logo-title">
                             <h3 class="logo-upper red">
@@ -23,12 +23,12 @@
                                 (на русском языке)
                             </span>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <nav class="col-9 d-flex justify-content-end">
-                    <a class="header-nav-link">Документация</a>
+                    <a class="header-nav-link" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
                     <a class="header-nav-link" href="#about">О сайте</a>
-                    <a class="header-nav-link">Обучение</a>
+                    <a class="header-nav-link" href="training.html">Обучение</a>
                 </nav>
             </div>
         </div>
@@ -46,7 +46,7 @@
                             Удобный и простой веб справочник по изучению PHP-фреймворка “Laravel”. Полностью бесплатный и полностью на русском языке.
                         </p>
                         <div class="hero-btns d-flex">
-                            <a href="#" class="main-btn">К ОБУЧЕНИЮ</a>
+                            <a href="training.html" class="main-btn">К ОБУЧЕНИЮ</a>
                             <a href="#" class="secondary-btn">ТЕСТИРОВАНИЕ</a>
                         </div>
                     </div>
@@ -83,10 +83,10 @@
                 <h2 class="videos-title">Также <span class="red">рекомендуем</span> посмотреть</h2>
                 <div class="row videos">
                     <div class="col-6">
-                        <iframe class="video" src="https://www.youtube.com/embed/iniIUcAKuLA?si=KKlJor8F_q3yklB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <img src="img/youtube/1.jpg" alt="Превью видео с ютуб" class="video" id="first-video">
                     </div>
                     <div class="col-6">
-                        <iframe class="video" src="https://www.youtube.com/embed/4RhY1JJgLsM?si=lk_oJg-aJpOd9-hy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <img src="img/youtube/2.jpg" alt="Превью видео с ютуб" class="video" id="second-video">
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
-                    <div class="logo d-flex align-items-center">
+                    <a class="logo d-flex align-items-center" href="index.html">
                         <img src="img/logo.svg" alt="Логотип" class="logo-img">
                         <div class="logo-title">
                             <h3 class="logo-upper red">
@@ -107,7 +107,7 @@
                                 (на русском языке)
                             </span>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-9 d-flex justify-content-end socials">
                     <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
@@ -120,5 +120,15 @@
     </footer>
 
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        let first_video_play = document.getElementById('first-video');
+        first_video_play.onmouseenter = function() {
+            this.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/iniIUcAKuLA?si=KKlJor8F_q3yklB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        };
+        let second_video_play = document.getElementById('second-video');
+        second_video_play.onmouseenter = function() {
+            this.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/4RhY1JJgLsM?si=lk_oJg-aJpOd9-hy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        };
+    </script>
 </body>
 </html>

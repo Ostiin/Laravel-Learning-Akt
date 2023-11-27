@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Урок 1</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <a class="logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <nav class="col-9 d-flex justify-content-end">
+                    <a class="header-nav-link" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                    <a class="header-nav-link" href="../../index.html#about">О сайте</a>
+                    <a class="header-nav-link" href="../../training.html">Обучение</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="section-less">
+            <div class="less-container">
+                <h1 class="less-main-title"><span class="red">Тема 1</span> - Введение в Laravel</h1>
+                <h2 class="less-main-subtitle"><span class="red">Урок 1</span> - Что такое Laravel и зачем его использовать?</h2>
+                <ul class="less-nav">
+                    <li class="less-nav-item"><a href="#definition" class="less-nav-link">Определение</a></li>
+                    <li class="less-nav-item"><a href="#why-use-laravel" class="less-nav-link">Зачем используют Laravel</a></li>
+                    <li class="less-nav-item"><a href="#mvc" class="less-nav-link">MVC (model-view-controller)</a></li>
+                    <li class="less-nav-item"><a href="#features" class="less-nav-link">Особенности и преимущества Laravel</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#ecosystem" class="less-subnav-link">Развитая экосистема</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#performance" class="less-subnav-link">Улучшенная производительность</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#security" class="less-subnav-link">Обеспечение безопасности</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#open-source" class="less-subnav-link">Открытый исходный код</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#syntax" class="less-subnav-link">Понятный синтаксис</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#routing" class="less-subnav-link">Гибкая маршрутизация</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#migration" class="less-subnav-link">Легкая миграция</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#multilingualism" class="less-subnav-link">Мультиязычность</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#libraries" class="less-subnav-link">Обилие пакетов и библиотек</a>
+                        </li>
+                    </ul>
+                    <li class="less-nav-item"><a href="#shortcomings" class="less-nav-link">Недостатки Laravel</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#complexity" class="less-subnav-link">Сложность для новичков</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#performance-2" class="less-subnav-link">Производительность</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#updates" class="less-subnav-link">Обновления и совместимость</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#multifunctionality" class="less-subnav-link">Многофункциональность</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#code-scope" class="less-subnav-link">Объем кода</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#variability" class="less-subnav-link">Изменчивость</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#team-training" class="less-subnav-link">Обучение и переобучение команды</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#packages-dependence" class="less-subnav-link">Зависимость от сторонних пакетов</a>
+                        </li>
+                    </ul>
+                </ul>
+                <div class="less-topic" id="definition">
+                    <h2 class="less-title">Определение</h2>
+                    <p class="less-text">
+                        Laravel - это бесплатный PHP-фреймворк с открытым исходным кодом, который специально создан для разработки сложных веб-сайтов и приложений. Он предоставляет удобные инструменты для упрощения таких задач, как аутентификация пользователей, маршрутизация, управление сессиями, кэширование данных, организация архитектуры приложения и работа с базой данных.
+                    </p>
+                </div>
+                <div class="less-topic" id="why-use-laravel">
+                    <h2 class="less-title">Зачем используют Laravel</h2>
+                    <p class="less-text">
+                        Laravel - это фреймворк для backend-разработки на PHP. Он предоставляет структуру и каркас для создания веб-приложений. Laravel расширяет возможности PHP и доступен бесплатно под лицензией MIT.
+                    </p>
+                </div>
+                <div class="less-topic" id="mvc">
+                    <h2 class="less-title">MVC (model-view-controller)</h2>
+                    <p class="less-text">
+                        Laravel преднназначен для разработки веб-приложений и сайтов, используя архитектурный шаблон MVC. В этой архитектуре компоненты программы разделены на три части:
+                    </p>
+                    <ul class="less-list">
+                        <li class="less-item">
+                            Модель (model) предоставляет данные и методы для работы с ними, такие как запросы к базе данных и проверка их корректности.
+                        </li>
+                        <li class="less-item">
+                            Представление (view) отображает эти данные пользователю и изменяется при изменении модели.
+                        </li>
+                        <li class="less-item">
+                            Контроллер (controller) обрабатывает данные, поступающие от пользователя к системе и наоборот.
+                        </li>
+                    </ul>
+                    <p class="less-text">
+                        При взаимодействии пользователя с приложением, построенным по шаблону MVC, он взаимодействует с представлением и контроллером. Представление отображает данные, которые пользователь видит в визуальном интерфейсе, а контроллер получает команды от пользователя.
+                    </p>
+                    <p class="less-text">
+                        Например, когда пользователь нажимает кнопку в приложении, это вызывает обработку контроллером. Контроллер изменяет модель, а затем представление обновляется, получая новые данные из модели и изменяя свое состояние. Таким образом, пользователь видит результат нажатия кнопки.
+                    </p>
+                    <p class="less-text">
+                        Наглядная работа MVC представлена на фото: 
+                    </p>
+                    <div class="row">
+                        <img src="../../img/unit-1/theme-1/lesson-1/MVC.png" alt="Картинко с наглядным представлением работы MVC" class="less-img">
+                    </div>
+                    <p class="less-text">
+                        Архитектура MVC позволяет писать более читабельный код, а процесс разработки сделать комфортным, разграничивая работу frontend и backend-разработчиков.
+                    </p>
+                </div>
+                <div class="less-topic" id="features">
+                    <h2 class="less-title">Особенности и преимущества Laravel</h2>
+                    <div class="less-subtopic" id="ecosystem">
+                        <h3 class="less-subtitle">Развитая экосистема</h3>
+                        <p class="less-text">
+                            Laravel имеет активное комьюнити, которое включает несколько сайтов, таких как <a href="https://laravel.su/" class="less-link" target="_blank">https://laravel.su/</a> и <a href="https://laravel.su/" class="less-link" target="_blank">https://laravel.ru/</a>, где можно найти статьи об особенностях фреймворка и дополнительное программное обеспечение, которое упрощает работу с ним. 
+                        </p>
+                        <p class="less-text">
+                            Кроме того, существуют международные конференции под названием Laracon, которые проводятся с 2013 года. 
+                        </p>
+                        <p class="less-text">
+                            Экосистема Laravel постоянно развивается, что поддерживает интерес к проекту со стороны спонсоров и способствует его развитию.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="performance">
+                        <h3 class="less-subtitle">Улучшенная производительность</h3>
+                        <p class="less-text">
+                            Laravel обладает возможностью работать с noSQL-базами данных, которые отличаются более высокой скоростью работы по сравнению с традиционными базами данных. Данные хранятся в оперативной памяти сервера, что позволяет быстро получать к ним доступ.  
+                        </p>
+                        <p class="less-text">
+                            Laravel также предоставляет возможность управления кэшированием и имеет встроенный механизм очередей процессов. Это способствует повышению производительности, ускорению доступа к данным и снижению нагрузки на вычислительные ресурсы. 
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="security">
+                        <h3 class="less-subtitle">Обеспечение безопасности</h3>
+                        <p class="less-text">
+                            В Laravel встроены механизмы защиты от SQL-инъекций и XSS-атак. С помощью ORM-системы Laravel предотвращается возможность проведения SQL-инъекций, так как она не позволяет обрабатывать внешние SQL-запросы. Кроме того, Laravel предоставляет возможность экранирования тегов для защиты от XSS-атак. 
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="open-source">
+                        <h3 class="less-subtitle">Открытый исходный код</h3>
+                        <p class="less-text">
+                            Laravel является программным обеспечением с открытым исходным кодом (open-source). Это означает, что любой разработчик может вносить изменения в свою собственную копию фреймворка. Исходный код Laravel доступен на GitHub. Хотя на практике редко вносятся изменения в сам фреймворк, возможность просмотра и изучения исходного кода позволяет лучше понять, как работает тот или иной модуль. 
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="syntax">
+                        <h3 class="less-subtitle">Понятный синтаксис</h3>
+                        <p class="less-text">
+                            Laravel имеет понятный синтаксис, что способствует улучшению читаемости кода. В нем отсутствуют длинные и сложные конструкции, а также присутствует множество "синтаксического сахара" - команд и возможностей, которые делают написание кода более простым. 
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="routing">
+                        <h3 class="less-subtitle">Гибкая маршрутизация</h3>
+                        <p class="less-text">
+                            Маршрутизация в веб-программировании представляет собой процесс определения пути передачи информации от одной точки к другой. Она осуществляется путем анализа URL и запроса пользователя, а затем выполнения соответствующего кода. Возможно группирование маршрутов, использование различных методов проверки, управление пространствами имен и применение регулярных выражений.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="migration">
+                        <h3 class="less-subtitle">Легкая миграция</h3>
+                        <p class="less-text">
+                            Благодаря системе контроля версий структуры базы данных разработчики могут легко вносить изменения и, при необходимости, откатывать базу данных. Это позволяет минимизировать риск серьезного сбоя базы данных, что особенно важно, когда над проектом работает несколько человек одновременно.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="multilingualism">
+                        <h3 class="less-subtitle">Мультиязычность</h3>
+                        <p class="less-text">
+                            Laravel может быть использован для создания многоязычных сайтов, поддерживающих различные языковые зоны. Например, это могут быть сайты для русскоязычных и англоязычных пользователей. Фреймворк поддерживает множество языков и позволяет быстро настроить мультиязычность.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="libraries">
+                        <h3 class="less-subtitle">Обилие пакетов и библиотек</h3>
+                        <p class="less-text">
+                            Библиотеки представляют собой наборы функций, которые помогают упростить работу программиста. Они позволяют выполнять сложные задачи в одну строку кода, что вручную заняло бы гораздо больше строк. Пакеты, с другой стороны, являются программными модулями, которые расширяют возможности фреймворка. Они предоставляют более широкий функционал и используются для реализации конкретных решений. Например, пакет Laravel Sanctum обеспечивает быструю аутентификацию по токену.
+                        </p>
+                        <p class="less-text">
+                            Хотя Laravel обладает множеством функциональных возможностей, он также требует от разработчика некоторого ручного труда. Это обеспечивает гибкость при создании программных решений, но может замедлить работу. Кроме того, изучение Laravel может быть сложнее, чем изучение некоторых конкурирующих фреймворков.
+                        </p>
+                    </div>
+                </div>
+                <div class="less-topic" id="shortcomings">
+                    <h2 class="less-title">Недостатки</h2>
+                    <div class="less-subtopic" id="complexity">
+                        <h3 class="less-subtitle">Сложность для новичков</h3>
+                        <p class="less-text">
+                            Laravel предоставляет множество функций и инструментов, что может быть сложным для новичков. Освоение всех возможностей фреймворка может потребовать времени и усилий.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="performance-2">
+                        <h3 class="less-subtitle">Производительность</h3>
+                        <p class="less-text">
+                            По сравнению с некоторыми другими более легковесными фреймворками, такими как Lumen или Slim, Laravel может иметь более высокий накладный расход производительности. Это может быть проблемой для некоторых проектов.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="updates">
+                        <h3 class="less-subtitle">Обновления и совместимость</h3>
+                        <p class="less-text">
+                            При обновлении Laravel до новых версий, особенно для крупных проектов, могут возникнуть проблемы с совместимостью существующего кода. Это может потребовать дополнительных усилий для адаптации приложения к новым версиям.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="multifunctionality">
+                        <h3 class="less-subtitle">Многофункциональность</h3>
+                        <p class="less-text">
+                            Для некоторых проектов Laravel может предоставлять слишком много функциональности, которая не используется в полной мере. Это может привести к избыточности кода и сложности поддержки.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="code-scope">
+                        <h3 class="less-subtitle">Объем кода</h3>
+                        <p class="less-text">
+                            Приложения, разрабатываемые с использованием Laravel, могут иметь большой объем кода из-за множества встроенных функций и библиотек. Это может усложнить обслуживание и отладку.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="variability">
+                        <h3 class="less-subtitle">Изменчивость</h3>
+                        <p class="less-text">
+                            Как и любой фреймворк, Laravel может подвергаться изменениям со временем, что может повлиять на существующий код и требовать его обновления.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="team-training">
+                        <h3 class="less-subtitle">Обучение и переобучение команды</h3>
+                        <p class="less-text">
+                            Для использования Laravel необходимо обучение, и если команда разработчиков уже имеет опыт работы с другими фреймворками, потребуется время для переобучения на Laravel.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="packages-dependence">
+                        <h3 class="less-subtitle">Зависимость от сторонних пакетов</h3>
+                        <p class="less-text">
+                            Laravel активно использует сторонние пакеты (composer-пакеты), и если один из таких пакетов перестанет поддерживаться или будет иметь проблемы совместимости, это может повлиять на ваш проект.
+                        </p>
+                    </div>  
+                </div>
+            </div>
+            <div class="less-btns d-flex justify-content-center">
+                <a href="#" class="main-btn">К ТЕСТИРОВАНИЮ</a>
+                <a href="#" class="secondary-btn">СЛЕДУЮЩИЙ УРОК</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <a class="logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-9 d-flex justify-content-end socials">
+                    <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="../../img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
+                    <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="../../img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
+                    <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="../../img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
+                    <a class="footer-nav-link" href="kkostaninkk@gmail.com" target="_blank"><img src="../../img/socials/google.svg" class="footer-icon" alt="Иконка гугл почты"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
