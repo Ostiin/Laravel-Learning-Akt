@@ -11,26 +11,31 @@
 
     <header class="header">
         <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-3">
-                    <a class="logo d-flex align-items-center" href="index.html">
-                        <img src="img/logo.svg" alt="Логотип" class="logo-img">
-                        <div class="logo-title">
-                            <h3 class="logo-upper red">
-                                Laravel 10
-                            </h3>
-                            <span class="logo-lower">
-                                (на русском языке)
-                            </span>
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-fluid d-flex">
+                        <a class="logo d-flex align-items-center" href="index.html">
+                            <img src="img/logo.svg" alt="Логотип" class="logo-img">
+                            <div class="logo-title">
+                                <h3 class="logo-upper red">
+                                    Laravel 10
+                                </h3>
+                                <span class="logo-lower">
+                                    (на русском языке)
+                                </span>
+                            </div>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+                        <div class="collapse navbar-collapse" id="navbarNav">  
+                            <div class="header-links d-flex justify-content-md-end justify-content-center flex-md-row flex-column text-center">
+                                <a class="header-nav-link me-md-4 mb-md-0 mt-md-0 me-0 mb-3 mt-5" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                                <a class="header-nav-link me-md-4 mb-md-0 me-0 mb-3" href="#about">О сайте</a>
+                                <a class="header-nav-link" href="training.html">Обучение</a>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <nav class="col-9 d-flex justify-content-end">
-                    <a class="header-nav-link" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
-                    <a class="header-nav-link" href="#about">О сайте</a>
-                    <a class="header-nav-link" href="training.html">Обучение</a>
+                    </div>
                 </nav>
-            </div>
         </div>
     </header>
 
@@ -38,19 +43,19 @@
         <section class="section-hero">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-7">
+                    <div class="col-lg-7 col-12">
                         <h1 class="title">
                             Разработка сайтов на <span class="red">PHP-фреймворке</span>
                         </h1>
                         <p class="hero-text">
                             Удобный и простой веб справочник по изучению PHP-фреймворка “Laravel”. Полностью бесплатный и полностью на русском языке.
                         </p>
-                        <div class="hero-btns d-flex">
+                        <div class="hero-btns d-flex flex-sm-row flex-column">
                             <a href="training.html" class="main-btn">К ОБУЧЕНИЮ</a>
-                            <a href="tests/tests.html" class="secondary-btn">ТЕСТИРОВАНИЕ</a>
+                            <a href="tests/tests.html" class="secondary-btn mt-sm-0 mt-4">ТЕСТИРОВАНИЕ</a>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-lg-5 d-lg-block d-none">
                         <img src="img/ойтишник.svg" alt="Программист программирует" class="hero-img">
                     </div>
                 </div>
@@ -60,7 +65,7 @@
         <section class="section-about" id="about">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-12 text-lg-start text-center">
                         <h2 class="about-title">
                             О сайте
                         </h2>
@@ -71,7 +76,7 @@
                             Обучение делится на модули, которые в свою очередь подразделяются на темы. Каждая тема рассматривает тот или иной аспект фреймворка, а также в конце предоставляет возможность пройти тестирование.
                         </p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-lg-block d-none">
                         <img src="img/code.svg" class="about-img" alt="Пример ларавель кода">
                     </div>
                 </div>
@@ -82,10 +87,10 @@
             <div class="container">
                 <h2 class="videos-title">Также <span class="red">рекомендуем</span> посмотреть</h2>
                 <div class="row videos">
-                    <div class="col-6">
+                    <div class="col-sm-6 mb-lg-0 mb-3">
                         <img src="img/youtube/1.jpg" alt="Превью видео с ютуб" class="video" id="first-video">
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <img src="img/youtube/2.jpg" alt="Превью видео с ютуб" class="video" id="second-video">
                     </div>
                 </div>
@@ -96,7 +101,7 @@
     <footer class="footer">
         <div class="container">
             <div class="row d-flex align-items-center">
-                <div class="col-3">
+                <div class="col-5">
                     <a class="logo d-flex align-items-center" href="index.html">
                         <img src="img/logo.svg" alt="Логотип" class="logo-img">
                         <div class="logo-title">
@@ -109,7 +114,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-9 d-flex justify-content-end socials">
+                <div class="col-7 d-flex justify-content-end socials">
                     <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
                     <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
                     <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>

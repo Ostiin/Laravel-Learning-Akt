@@ -191,6 +191,17 @@ input[type="radio"]{
     margin-left: 0;
 }
 
+/*Меню в шапке*/
+.navbar-toggler-icon {
+    width: 50px;
+    background: transparent url('../img/icons/burger.svg') center/1em auto no-repeat;
+    background-size: 100%;
+}
+
+.header-links {
+    width: 100%;
+}
+
 /*ГЛАВНАЯ СТРАНИЦА
 Section Hero стили*/
 .section-hero {
@@ -201,6 +212,10 @@ Section Hero стили*/
 .hero-text {
     max-width: 460px;
     margin: 30px 0;
+}
+
+.hero-img {
+    width: 100%;
 }
 
 /*Стили секции "О сайте"*/
@@ -214,7 +229,7 @@ Section Hero стили*/
 }
 
 .about-text {
-    max-width: 520px;
+    width: 100%;
     font-size: 18px;
 }
 
