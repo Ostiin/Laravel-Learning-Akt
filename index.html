@@ -122,13 +122,23 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
         let first_video_play = document.getElementById('first-video');
-        first_video_play.onmouseenter = function() {
-            this.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/iniIUcAKuLA?si=KKlJor8F_q3yklB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-        };
         let second_video_play = document.getElementById('second-video');
-        second_video_play.onmouseenter = function() {
-            this.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/4RhY1JJgLsM?si=lk_oJg-aJpOd9-hy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-        };
+        // Создаем новый экземпляр Intersection Observer
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+            // Если div становится видимым
+            if (entry.isIntersecting) {
+                first_video_play.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/iniIUcAKuLA?si=KKlJor8F_q3yklB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                second_video_play.parentElement.innerHTML = '<iframe class="video" src="https://www.youtube.com/embed/4RhY1JJgLsM?si=lk_oJg-aJpOd9-hy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            }
+            });
+        });
+
+        // Находим целевой div
+        var videos = document.getElementById('videos');
+
+        // Наблюдаем за изменениями видимости div
+        observer.observe(videos);
     </script>
 </body>
 </html>
