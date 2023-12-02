@@ -83,6 +83,11 @@ ul {
     padding-left: 0;
 }
 
+/*Очистка стилей для radio*/
+input[type="radio"]{
+    display:none;
+}
+
 /*Обшие кастомные стили*/
 .main-btn, .secondary-btn {
     font-weight: 700;
@@ -100,6 +105,7 @@ ul {
 }
 
 .main-btn {
+    font-size: 20px;
     color: white;
     background: #F13C2F;
 }
@@ -111,6 +117,51 @@ ul {
 .secondary-btn:hover {
     color: white;
     background: #F13C2F;
+}
+
+/*Модальное окно*/
+.modal-content {
+    background: #171923;
+}
+
+.modal-header {
+    border-bottom: 1px solid #282C34;
+}
+
+.modal-footer {
+    border-top: 1px solid #282C34;
+}
+
+.btn-close {
+    background: transparent url('../img/close.svg') center/1em auto no-repeat;
+}
+
+.btn-primary {
+    background: #F13C2F;
+    border: #F13C2F 1px solid;
+}
+
+.btn-primary:hover {
+    color: #F13C2F;
+    background: none;
+    transform: none;
+    border: #F13C2F 1px solid;
+}
+
+.btn {
+    margin: 4px !important;
+}
+
+.btn-secondary {
+    background: none;
+    border: #F13C2F 1px solid;
+    color: #F13C2F;
+} 
+
+.btn-secondary:hover {
+    transform: none;
+    background: #F13C2F;
+    border: #F13C2F 1px solid;
 }
 
 /*Стили для шапки и подвала*/
@@ -249,7 +300,16 @@ Section Hero стили*/
 
 .less-container {
     max-width: 900px;
+    padding: 0 20px;
     margin: 0 auto;
+}
+
+/*Стили выделения слов*/
+.less-sel {
+    color: #F13C2F;
+    background: #282C34;
+    padding: 1px 2px;
+    border-radius: 3px;
 }
 
 /*Заголовки*/
@@ -300,7 +360,6 @@ Section Hero стили*/
 /*Стили списков урока*/
 .less-item {
     color: #c7c7c7;
-    font-size: 20px;
     padding: 0;
 }
 
@@ -356,4 +415,93 @@ Section Hero стили*/
 .code-block {
     border-radius: 10px;
     padding: 20px !important;
+}
+
+.less-text, .less-sel, .less-nav-link, .less-subnav-link, .less-link {
+    font-size: 18px;
+}
+
+/*Стили для страницы тестов*/
+.section-test {
+    margin-bottom: 150px;
+}
+
+.test-title {
+    margin-top: 150px;
+}
+
+.que {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.test-radio {
+    margin-top: 15px;
+}
+
+.que-label {
+    margin-left: 10px;
+}
+
+.test-radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+
+.que-label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	border: 1px solid #F13C2F;
+    border-radius: 50%;
+}
+ 
+/* Checked */
+input[type=radio]:checked + label:before {
+	background: url(../img/circle.svg) center no-repeat;
+}
+ 
+/* Hover */
+.que-label:hover:before {
+	filter: brightness(120%);
+}
+ 
+/* Disabled */
+.test-radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
+}
+
+/*Стили для страницы тестов*/
+.section-tests {
+    margin: 150px 0;
+}
+
+.tests-square {
+    font-size: 96px;
+    font-weight: bold;
+    background: #F13C2F;
+    width: 175px;
+    height: 175px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.tests-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tests-card-title {
+    max-width: 300px;
 }

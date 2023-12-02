@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../css/noty.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Урок 3</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <a class="logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <nav class="col-9 d-flex justify-content-end">
+                    <a class="header-nav-link" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                    <a class="header-nav-link" href="../../index.html#about">О сайте</a>
+                    <a class="header-nav-link" href="../../training.html">Обучение</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="section-less">
+            <div class="less-container">
+                <h1 class="less-main-title"><span class="red">Тема 1</span> - Введение в Laravel</h1>
+                <h2 class="less-main-subtitle"><span class="red">Урок 3</span> - Установка Laravel и настройка окружения разработки.</h2>
+                <ul class="less-nav">
+                    <li class="less-nav-item"><a href="#programs" class="less-nav-link">Установка программ</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#os" class="less-subnav-link">Open Server</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#vsc" class="less-subnav-link">Visual Studio Code</a>
+                        </li>
+                    </ul>
+                    <li class="less-nav-item"><a href="#laravel" class="less-nav-link">Создание проекта Laravel</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#download" class="less-subnav-link">Установка Laravel</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#settings" class="less-subnav-link">Базовая настройка</a>
+                        </li>
+                    </ul>
+                </ul>
+                <div class="less-topic" id="programs">
+                    <h2 class="less-title">Установка программ</h2>
+                    <div class="less-subtopic" id="os">
+                        <h3 class="less-subtitle">Open Server</h3>
+                        <p class="less-text">
+                            Для запуска проекта на Laravel понадобиться локальный сервер, в нашем случае это Open Server. Скачать его можно по ссыле <a href="https://ospanel.io/download/" class="less-link" target="_blank">https://ospanel.io/download/</a>. При установке настройки можно оставить по умолчанию.
+                        </p>
+                        <p class="less-text">
+                            После установки у вас появится иконка красного флажка, на которую нужно нажать:
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/1.png" alt="Скриншот с иконкой Open Server" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            Далее мы нажимаеи на <span class="less-sel">"Папка с проектами"</span>. Должна открыться папка domains, уже там нужно создать папку с названием вашего проекта, в моем случае это будет <span class="less-sel">"Laravel-Course"</span>.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/2.png" alt="Скриншот папки проекта" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            Отлично! Теперь нужно вернуться к предыдущему меню и перейти в <span class="less-sel">Настройки->Домены</span>. Проверьте что в настройке <span class="less-sel">Управление доменами</span> стоит настройка <span class="less-sel">Автопоиск доменов</span>.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/3.png" alt="Настройки доменов" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            После переходи в <span class="less-sel">"Модули"</span> и выставляем настройки на на скриншоте. HTTP: <span class="less-sel">Apache_2.4-PHP_8.0-8.1</span>.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/4.png" alt="Настройки модулей" class="less-img">
+                        </div>
+                        <p class="less-text">Настройка Open Server завершилась!</p>
+                    </div>
+                    <div class="less-subtopic" id="vsc">
+                        <h3 class="less-subtitle">Visual Studio Code</h3>
+                        <p class="less-text">
+                            Теперь нужно установить редактор кода. Для этого мы будем использовать <span class="less-sel">Visual Studio Code</span>, просто скачайте его по ссылке: <a href="https://code.visualstudio.com/download" class="less-link">https://code.visualstudio.com/download</a>.
+                        </p>
+                        <p class="less-text">Все нужные программы на данный момент установлены, можно приступать к установке Laravel.</p>
+                    </div>
+                </div>
+
+                <div class="less-topic" id="laravel">
+                    <h2 class="less-title">Создание проекта Laravel</h2>
+                    <div class="less-subtopic" id="download">
+                        <h3 class="less-subtitle">Установка Laravel</h3>
+                        <p class="less-text">
+                            Для начала нам нужно сделать следующее: запустить <span class="less-sel">Open Server</span> и открыть <span class="less-sel">консоль</span>.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/5.png" alt="Открытие консоли" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            После в консоли нужно перейти в папку с проектом с помощью команды <span class="less-sel">cd domains/название-папки-проекта</span>. А затем использовать следующую команду:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-1" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-1">composer create-project laravel/laravel .</code></pre>
+                        </div>
+                        <p class="less-text">
+                            После этого произойдет установка файлов Laravel в папку с вашим проектом.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/6.png" alt="Установка Laravel консоль" class="less-img">
+                        </div>
+                        <p class="less-text">Как только закончится загрузка, можно посмотреть структуру файлов в нашей папке, она будет выглядеть примерно так:</p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/7.png" alt="Структура папок Laravel" class="less-img">
+                        </div>
+                    </div>
+                    <div class="subtopic" id="settings">
+                        <h3 class="less-subtitle">Базовая настройка</h3>
+                        <p class="less-text">
+                            Мы установили Laravel в папку с нашим проектом, а теперь нам нужно сделать так, чтобы при переходе на наш <span class="less-sel">домен</span>(название папки) мы попадали на главную страницу. Для этого открываем настройки Open Server->Домены и выбираем в настройке <span class="less-sel">"Автопоиск корневой папки домена"</span> последний пункт.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/8.png" alt="Настройка домена Laravel" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            Теперь, для того чтобы проверить работоспособность проекта, нажмите на иконку <span class="less-sel">Open Server->Мои проекты->Ваш проект</span>.
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/9.png" alt="Открытие проекта Laravel" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            После этих действий должна открыться <span class="less-sel">главная страница</span> проекта, которая выглядит примерно так:
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-1/lesson-3/10.png" alt="Главная страница Laravel проекта" class="less-img">
+                        </div>
+                        <p class="less-text">Отлично! Мы установили <span class="less-sel">Laravel</span> и проверили его работоспособность. В последующих темах мы будем на этом проекте рассматривать различные возможности фреймворка, а пока вы можете приступать к следующему уроку, или пройти <span class="less-sel">тестирование</span> по теме.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="less-btns d-flex justify-content-center">
+                <a href="../../tests/unit-1/1.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
+                <a href="lesson-3.html" class="secondary-btn">СЛЕДУЮЩИЙ УРОК</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <a class="logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-9 d-flex justify-content-end socials">
+                    <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="../../img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
+                    <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="../../img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
+                    <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="../../img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
+                    <a class="footer-nav-link" href="kkostaninkk@gmail.com" target="_blank"><img src="../../img/socials/google.svg" class="footer-icon" alt="Иконка гугл почты"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/noty.min.js"></script>
+    <script src="../../js/copyText.js"></script>
+    <script src="../../js/highlight.min.js"></script>
+    <script src="../../js/php.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

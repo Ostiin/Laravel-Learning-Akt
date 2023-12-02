@@ -39,7 +39,7 @@
         <div class="section-less">
             <div class="less-container">
                 <h1 class="less-main-title"><span class="red">Тема 1</span> - Введение в Laravel</h1>
-                <h2 class="less-main-subtitle"><span class="red">Урок 2</span> - Основные возможности и структура проекта в Laravel</h2>
+                <h2 class="less-main-subtitle"><span class="red">Урок 2</span> - Основные концепции и структура проекта в Laravel.</h2>
                 <ul class="less-nav">
                     <li class="less-nav-item"><a href="#possibilities" class="less-nav-link">Возможности фреймворка Laravel</a></li>
                     <ul class="less-subnav">
@@ -68,10 +68,80 @@
                             <a href="#auth" class="less-subnav-link">Аутентификация</a>
                         </li>
                     </ul>
-                    <li class="less-nav-item"><a href="#catalog" class="less-nav-link">Структура каталога</a></li>
+                    <li class="less-nav-item"><a href="#introduction" class="less-nav-link">Структура каталога, введение</a></li>
+                    <li class="less-nav-item"><a href="#catalog" class="less-nav-link">Корневой каталог</a></li>
                     <ul class="less-subnav">
                         <li class="less-subnav-item">
-                            <a href="#introduction" class="less-subnav-link">Введение</a>
+                            <a href="#app" class="less-subnav-link">Каталог приложений</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#bootstrap" class="less-subnav-link">Каталог Bootstrap</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#config" class="less-subnav-link">Каталог Config</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#db" class="less-subnav-link">Каталог баз данных</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#public" class="less-subnav-link">Каталог Public</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#resources" class="less-subnav-link">Каталог Resources</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#routes" class="less-subnav-link">Каталог Routes</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#storage" class="less-subnav-link">Каталог Storage</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#tests" class="less-subnav-link">Каталог тестов</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#vendor" class="less-subnav-link">Каталог Vendor</a>
+                        </li>
+                    </ul>
+                    <li class="less-nav-item"><a href="#app_catalog" class="less-nav-link">Каталог приложений</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#broadcasting" class="less-subnav-link">Каталог Broadcasting</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#console" class="less-subnav-link">Каталог Console</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#events" class="less-subnav-link">Каталог Events</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#exceptions" class="less-subnav-link">Каталог Exceptions</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#http" class="less-subnav-link">Каталог Http</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#jobs" class="less-subnav-link">Каталог Jobs</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#listeners" class="less-subnav-link">Каталог Listeners</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#mail" class="less-subnav-link">Каталог Mail</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#models" class="less-subnav-link">Каталог Models</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#notifications" class="less-subnav-link">Каталог уведомлений</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#policies" class="less-subnav-link">Каталог Policies</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#providers" class="less-subnav-link">Каталог Providers</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#rules" class="less-subnav-link">Каталог Rules</a>
                         </li>
                     </ul>
                 </ul>
@@ -155,19 +225,187 @@
                         </p>
                     </div>
                 </div>
+                <div class="less-topic" id="introduction">
+                    <h2 class="less-title">Структура каталога, введение</h2>
+                    <p class="less-text">
+                        Стандартная структура приложений Laravel предназначена для того, чтобы стать отличной отправной точкой как для больших, так и для малых приложений. Однако вы вольны организовать свое приложение так, как вам нравится. Laravel практически не накладывает ограничений на место расположения того или иного класса - при условии, что Composer может автозагрузить этот класс.
+                    </p>
+                </div>
                 <div class="less-topic" id="catalog">
-                    <h2 class="less-title">Структура каталога</h2>
-                    <div class="less-subtopic" id="introduction">
-                        <h3 class="less-subtitle">Введение</h3>
+                    <h2 class="less-title">Корневой каталог</h2>
+                    <div class="less-subtopic" id="app">
+                        <h3 class="less-subtitle">Каталог приложений</h3>
                         <p class="less-text">
-                            Стандартная структура приложений Laravel предназначена для того, чтобы стать отличной отправной точкой как для больших, так и для малых приложений. Однако вы вольны организовать свое приложение так, как вам нравится. Laravel практически не накладывает ограничений на место расположения того или иного класса - при условии, что Composer может автозагрузить этот класс.
+                            Каталог <span class="less-sel">app</span> содержит основной код вашего приложения. Мы рассмотрим этот каталог более подробно в ближайшее время, однако почти все классы вашего приложения будут находиться в этом каталоге.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="bootstrap">
+                        <h3 class="less-subtitle">Каталог Bootstrap</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">bootstrap</span> содержит файл <span class="less-sel">app.php</span>, который загружает фреймворк. В этой директории также находится каталог <span class="less-sel">cache</span>, который содержит файлы, созданные фреймворком для оптимизации производительности, такие как файлы кэша маршрутов и сервисов. Обычно вам не нужно изменять какие-либо файлы в этой директории.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="config">
+                        <h3 class="less-subtitle">Каталог Config</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">config</span>, как следует из названия, содержит все файлы конфигурации вашего приложения. Очень полезно прочитать все эти файлы и ознакомиться со всеми доступными вам опциями.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="db">
+                        <h3 class="less-subtitle">Каталог баз данных</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">database</span> содержит миграции базы данных, фабрики моделей и семена. При желании вы можете использовать этот каталог для хранения базы данных SQLite.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="public">
+                        <h3 class="less-subtitle">Каталог Public</h3>
+                        <p class="less-text">
+                            В каталоге <span class="less-sel">public</span> находится файл <span class="less-sel">index.php</span>, который является точкой входа для всех запросов, поступающих в ваше приложение, и настраивает автозагрузку. В этой директории также хранятся ваши активы, такие как изображения, JavaScript и CSS.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="resources">
+                        <h3 class="less-subtitle">Каталог Resources</h3>
+                        <p class="less-text">
+                            В директории <span class="less-sel">resources</span> содержатся представления, а также сырые, некомпилированные активы, такие как CSS или JavaScript.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="routes">
+                        <h3 class="less-subtitle">Каталог Routes</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">routes</span> содержит все определения маршрутов для вашего приложения. По умолчанию в Laravel включено несколько файлов маршрутов: <span class="less-sel">web.php</span>, <span class="less-sel">api.php</span>, <span class="less-sel">console.php</span> и <span class="less-sel">channels.php</span>.
+                        </p>
+                        <p class="less-text">
+                            Файл <span class="less-sel">web.php</span> содержит маршруты, которые <span class="less-sel">RouteServiceProvider</span> помещает в группу <span class="less-sel">web middleware</span>, что обеспечивает состояние сессии, защиту CSRF и шифрование cookie. Если ваше приложение не предлагает RESTful API без состояния, то все ваши маршруты, скорее всего, будут определены в файле <span class="less-sel">web.php</span>.
+                        </p>
+                        <p class="less-text">
+                            Файл <span class="less-sel">api.php</span> содержит маршруты, которые <span class="less-sel">RouteServiceProvider</span> помещает в группу <span class="less-sel">api middleware</span>. Эти маршруты должны быть статичными, поэтому запросы, поступающие в приложение по этим маршрутам, должны аутентифицироваться с помощью токенов и не будут иметь доступа к состоянию сессии.
+                        </p>
+                        <p class="less-text">
+                            Файл <span class="less-sel">console.php</span> - это место, где вы можете определить все ваши консольные команды, основанные на закрытиях. Каждое закрытие привязывается к экземпляру команды, что обеспечивает простой подход к взаимодействию с методами ввода-вывода каждой команды. Хотя этот файл не определяет HTTP-маршруты, он определяет консольные точки входа (маршруты) в ваше приложение.
+                        </p>
+                        <p class="less-text">
+                            Файл <span class="less-sel">channels.php</span> - это место, где вы можете зарегистрировать все каналы трансляции событий, которые поддерживает ваше приложение.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="storage">
+                        <h3 class="less-subtitle">Каталог Storage</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">storage</span> содержит ваши журналы, скомпилированные шаблоны Blade, сессии на основе файлов, файловые кэши и другие файлы, созданные фреймворком. Эта директория разделена на директории <span class="less-sel">app</span>, <span class="less-sel">framework</span> и <span class="less-sel">logs</span>. Каталог <span class="less-sel">app</span> может использоваться для хранения любых файлов, генерируемых вашим приложением. Каталог <span class="less-sel">framework</span> используется для хранения файлов и кэшей, созданных фреймворком. Наконец, каталог <span class="less-sel">logs</span> содержит файлы журналов вашего приложения.
+                        </p>
+                        <p class="less-text">
+                            Директория <span class="less-sel">storage/app/public</span> может использоваться для хранения пользовательских файлов, например аватаров профиля, которые должны быть общедоступны. Вы должны создать символическую ссылку в <span class="less-sel">public/storage</span>, которая будет указывать на эту директорию. Создать ссылку можно с помощью команды <span class="less-sel">php artisan storage:link</span> Artisan.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="tests">
+                        <h3 class="less-subtitle">Каталог тестов</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">tests</span> содержит автоматизированные тесты. Примеры юнит-тестов <span class="less-sel">PHPUnit</span> и функциональных тестов предоставляются из коробки. Каждый класс тестов должен иметь суффикс со словом <span class="less-sel">Test</span>. Вы можете запустить свои тесты с помощью команд <span class="less-sel">phpunit</span> или <span class="less-sel">php vendor/bin/phpunit</span>. Или, если вы хотите получить более подробное и красивое представление результатов тестирования, вы можете запустить свои тесты с помощью команды <span class="less-sel">php artisan test</span>.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="vendor">
+                        <h3 class="less-subtitle">Каталог Vendor</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">vendor</span> содержит ваши зависимости от <span class="less-sel">Composer</span>.
+                        </p>
+                    </div>
+                </div>
+                <div class="less-topic" id="app_catalog">
+                    <h2 class="less-title">Каталог приложений</h2>
+                    <p class="less-text">
+                        Большая часть вашего приложения находится в каталоге <span class="less-sel">app</span>. По умолчанию этот каталог имеет имя <span class="less-sel">App</span> и автозагружается Composer'ом, используя стандарт автозагрузки PSR-4.
+                    </p>
+                    <p class="less-text">
+                        Каталог <span class="less-sel">app</span> содержит множество дополнительных каталогов, таких как <span class="less-sel">Console</span>, <span class="less-sel">Http</span> и <span class="less-sel">Providers</span>. Считайте, что каталоги <span class="less-sel">Console</span> и <span class="less-sel">Http</span> предоставляют API к ядру вашего приложения. Протокол HTTP и CLI являются механизмами взаимодействия с вашим приложением, но не содержат логики приложения. Другими словами, это два способа передачи команд вашему приложению. Каталог <span class="less-sel">Console</span> содержит все ваши команды Artisan, а каталог <span class="less-sel">Http</span> - контроллеры, промежуточное ПО и запросы.
+                    </p>
+                    <p class="less-text">
+                        По мере использования команд <span class="less-sel">make</span> для создания классов внутри каталога <span class="less-sel">app</span> будет создаваться множество других каталогов. Так, например, каталог <span class="less-sel">app/Jobs</span> не будет существовать до тех пор, пока вы не выполните команду <span class="less-sel">make:job</span> для создания класса job.
+                    </p>
+                    <div class="less-subtopic" id="broadcasting">
+                        <h3 class="less-subtitle">Каталог Broadcasting</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Broadcasting</span> содержит все классы каналов вещания для вашего приложения. Эти классы создаются с помощью команды <span class="less-sel">make:channel</span>. По умолчанию этот каталог не существует, но он будет создан при создании первого канала.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="console">
+                        <h3 class="less-subtitle">Каталог Console</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Console</span> содержит все пользовательские команды Artisan для вашего приложения. Эти команды могут быть созданы с помощью <span class="less-sel">make:command</span>. В этом каталоге также находится ядро консоли, в котором регистрируются пользовательские команды Artisan и определяются запланированные задачи.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="events">
+                        <h3 class="less-subtitle">Каталог Events</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан командами <span class="less-sel">event:generate</span> и <span class="less-sel">make:event</span>. В каталоге <span class="less-sel">Events</span> содержатся классы событий. События могут использоваться для оповещения других частей вашего приложения о том, что произошло то или иное действие, что обеспечивает большую гибкость и развязку.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="exceptions">
+                        <h3 class="less-subtitle">Каталог Exceptions</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Exceptions</span> содержит обработчик исключений вашего приложения, а также является хорошим местом для размещения любых исключений, вызываемых вашим приложением. Если вы хотите изменить способ регистрации или отображения исключений, вам следует модифицировать класс <span class="less-sel">Handler</span> в этом каталоге.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="http">
+                        <h3 class="less-subtitle">Каталог Http</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Http</span> содержит контроллеры, промежуточное ПО и запросы к формам. Почти вся логика обработки запросов, поступающих в ваше приложение, будет размещена в этом каталоге.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="jobs">
+                        <h3 class="less-subtitle">Каталог Jobs</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команду <span class="less-sel">make:job</span>. В директории <span class="less-sel">Jobs</span> хранятся задания, которые можно поставить в очередь для вашего приложения. Задания могут быть поставлены в очередь вашим приложением или выполняться синхронно в течение текущего жизненного цикла запроса. Задания, которые выполняются синхронно во время текущего запроса, иногда называют "командами", поскольку они являются реализацией командного шаблона.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="listeners">
+                        <h3 class="less-subtitle">Каталог Listeners</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команды <span class="less-sel">event:generate</span> или <span class="less-sel">make:listener</span>. Каталог <span class="less-sel">Listeners</span> содержит классы, которые обрабатывают ваши события. Слушатели событий получают экземпляр события и выполняют логику в ответ на его срабатывание. Например, событие <span class="less-sel">UserRegistered</span> может быть обработано слушателем <span class="less-sel">SendWelcomeEmail</span>
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="mail">
+                        <h3 class="less-subtitle">Каталог Mail</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команду <span class="less-sel">make:mail</span>. Каталог <span class="less-sel">Mail</span> содержит все ваши классы, которые представляют электронные письма, отправляемые вашим приложением. Объекты Mail позволяют инкапсулировать всю логику создания письма в одном простом классе, который можно отправить с помощью метода <span class="less-sel">Mail::send</span>.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="models">
+                        <h3 class="less-subtitle">Каталог Models</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Models</span> содержит все ваши классы моделей Eloquent. Eloquent ORM, входящий в состав Laravel, предоставляет красивую и простую реализацию ActiveRecord для работы с базой данных. Каждая таблица базы данных имеет соответствующую "Модель", которая используется для взаимодействия с этой таблицей. Модели позволяют вам запрашивать данные в таблицах, а также вставлять новые записи в таблицу.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="notifications">
+                        <h3 class="less-subtitle">Каталог уведомлений</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команду <span class="less-sel">make:notification</span>. Каталог <span class="less-sel">Notifications</span> содержит все "транзакционные" уведомления, которые отправляются вашим приложением, например, простые уведомления о событиях, происходящих внутри вашего приложения. Функция уведомлений Laravel абстрагирует отправку уведомлений через различные драйверы, такие как электронная почта, Slack, SMS или хранение в базе данных.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="policies">
+                        <h3 class="less-subtitle">Каталог Policies</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команду <span class="less-sel">make:policy</span>. Каталог <span class="less-sel">Policies</span> содержит классы политик авторизации для вашего приложения. Политики используются для определения того, может ли пользователь выполнить то или иное действие над ресурсом.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="providers">
+                        <h3 class="less-subtitle">Каталог Providers</h3>
+                        <p class="less-text">
+                            Каталог <span class="less-sel">Providers</span> содержит все поставщики услуг для вашего приложения. Провайдеры загружают ваше приложение, связывая сервисы в контейнере сервисов, регистрируя события или выполняя любые другие задачи, чтобы подготовить приложение к входящим запросам.
+                        </p>
+                        <p class="less-text">
+                            В новом приложении Laravel эта директория уже будет содержать несколько провайдеров. При необходимости вы можете добавить в эту директорию своих провайдеров.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="rules">
+                        <h3 class="less-subtitle">Каталог Rules</h3>
+                        <p class="less-text">
+                            По умолчанию этот каталог не существует, но он будет создан, если вы выполните команду <span class="less-sel">make:rule</span>. Каталог <span class="less-sel">Rules</span> содержит объекты пользовательских правил валидации для вашего приложения. Правила используются для инкапсуляции сложной логики проверки в простой объект. 
                         </p>
                     </div>
                 </div>
             </div>
             <div class="less-btns d-flex justify-content-center">
-                <a href="#" class="main-btn">К ТЕСТИРОВАНИЮ</a>
-                <a href="#" class="secondary-btn">СЛЕДУЮЩИЙ УРОК</a>
+                <a href="../../tests/unit-1/1.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
+                <a href="lesson-3.html" class="secondary-btn">СЛЕДУЮЩИЙ УРОК</a>
             </div>
         </div>
     </main>
@@ -199,30 +437,10 @@
     </footer>
 
     <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/jquery-3.7.1.min.js"></script>
     <script src="../../js/noty.min.js"></script>
-    <script>
-        function copyText (obj) {
-            let id = obj.id;
-            id = id.toString().slice(-1);
-            id = 'code-text-' + id;
-            let text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(function() {
-                new Noty({
-                    type: 'success',
-                    timeout: 1500,
-                    text: 'Вы скопировали код в буфер обмена!',
-                }).show();
-                console.log('Текст успешно скопирован в буфер обмена');
-            }, function(err) {
-                console.error('Произошла ошибка при копировании текста: ', err);
-            });
-        };
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-    <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script src="../../js/copyText.js"></script>
+    <script src="../../js/highlight.min.js"></script>
+    <script src="../../js/php.min.js"></script>
     <script>hljs.highlightAll();</script>
 </body>
 </html>
