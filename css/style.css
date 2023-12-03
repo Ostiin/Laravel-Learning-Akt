@@ -530,7 +530,16 @@ input[type=radio]:checked + label:before {
 }
 
 /*Медиа запросы*/
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
+    .section-hero, .section-unit {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+
+    .section-tests, .test-title {
+        margin-top: 50px;
+    }
+    
     .logo-title {
         display: none;
     }
