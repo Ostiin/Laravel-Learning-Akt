@@ -191,6 +191,15 @@ input[type="radio"]{
     margin-left: 0;
 }
 
+.navbar-toggler {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 /*Меню в шапке*/
 .navbar-toggler-icon {
     width: 50px;
@@ -296,8 +305,7 @@ Section Hero стили*/
 }
 
 .lesson-item {
-    padding: 20px 0;
-    margin-left: 20px;
+    padding: 20px;
 }
 
 .lesson-item a {
@@ -519,4 +527,63 @@ input[type=radio]:checked + label:before {
 
 .tests-card-title {
     max-width: 300px;
+}
+
+/*Медиа запросы*/
+@media (max-width: 575.98px) { 
+    .logo-title {
+        display: none;
+    }
+
+    .footer-logo {
+        display: none !important;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .video {
+        height: 250px;
+    }
+
+    .main-btn {
+        margin-right: 0 !important;
+    }
+
+    .less-text, .less-sel, .less-link {
+        font-size: 14px;
+    }
+
+    .tests-title {
+        font-size: 32px;
+    }
+
+    .tests-square {
+        width: 80px;
+        height: 80px;
+        font-size: 60px;
+    }
+
+    .tests-card-title {
+        font-size: 15px;
+    }
+
+    .tests-btn {
+        width: 140px;
+        height: 30px;
+        font-size: 14px;
+    }
 }

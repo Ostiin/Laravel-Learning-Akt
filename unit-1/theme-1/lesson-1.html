@@ -10,26 +10,31 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-3">
-                    <a class="logo d-flex align-items-center" href="../../index.html">
-                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
-                        <div class="logo-title">
-                            <h3 class="logo-upper red">
-                                Laravel 10
-                            </h3>
-                            <span class="logo-lower">
-                                (на русском языке)
-                            </span>
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-fluid d-flex">
+                        <a class="logo d-flex align-items-center" href="../../index.html">
+                            <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                            <div class="logo-title">
+                                <h3 class="logo-upper red">
+                                    Laravel 10
+                                </h3>
+                                <span class="logo-lower">
+                                    (на русском языке)
+                                </span>
+                            </div>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+                        <div class="collapse navbar-collapse" id="navbarNav">  
+                            <div class="header-links d-flex justify-content-md-end justify-content-center flex-md-row flex-column text-center">
+                                <a class="header-nav-link me-md-4 mb-md-0 mt-md-0 me-0 mb-3 mt-5" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                                <a class="header-nav-link me-md-4 mb-md-0 me-0 mb-3" href="../../index.html#about">О сайте</a>
+                                <a class="header-nav-link" href="../../training.html">Обучение</a>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <nav class="col-9 d-flex justify-content-end">
-                    <a class="header-nav-link" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
-                    <a class="header-nav-link" href="../../index.html#about">О сайте</a>
-                    <a class="header-nav-link" href="../../training.html">Обучение</a>
+                    </div>
                 </nav>
-            </div>
         </div>
     </header>
 
@@ -265,9 +270,9 @@
                     </div>  
                 </div>
             </div>
-            <div class="less-btns d-flex justify-content-center">
+            <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center">
                 <a href="../../tests/unit-1/1.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
-                <a href="lesson-2.html" class="secondary-btn">СЛЕДУЮЩИЙ УРОК</a>
+                <a href="lesson-2.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
             </div>
         </div>
     </main>
@@ -275,8 +280,8 @@
     <footer class="footer">
         <div class="container">
             <div class="row d-flex align-items-center">
-                <div class="col-3">
-                    <a class="logo d-flex align-items-center" href="../../index.html">
+                <div class="col-6">
+                    <a class="logo footer-logo d-flex align-items-center" href="../../index.html">
                         <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
                         <div class="logo-title">
                             <h3 class="logo-upper red">
@@ -288,7 +293,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-9 d-flex justify-content-end socials">
+                <div class="col-sm-6 col-12 d-flex justify-content-sm-end justify-content-center socials">
                     <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="../../img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
                     <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="../../img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
                     <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="../../img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
