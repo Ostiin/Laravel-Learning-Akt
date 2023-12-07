@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../css/noty.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Урок 4</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-fluid d-flex">
+                        <a class="logo d-flex align-items-center" href="../../index.html">
+                            <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                            <div class="logo-title">
+                                <h3 class="logo-upper red">
+                                    Laravel 10
+                                </h3>
+                                <span class="logo-lower">
+                                    (на русском языке)
+                                </span>
+                            </div>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+                        <div class="collapse navbar-collapse" id="navbarNav">  
+                            <div class="header-links d-flex justify-content-md-end justify-content-center flex-md-row flex-column text-center">
+                                <a class="header-nav-link me-md-4 mb-md-0 mt-md-0 me-0 mb-3 mt-5" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                                <a class="header-nav-link me-md-4 mb-md-0 me-0 mb-3" href="../../index.html#about">О сайте</a>
+                                <a class="header-nav-link" href="../../training.html">Обучение</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="section-less">
+            <div class="less-container">
+                <h1 class="less-main-title"><span class="red">Тема 2</span> - Маршрутизация и контроллеры</h1>
+                <h2 class="less-main-subtitle"><span class="red">Урок 4</span> - Определение маршрутов в Laravel.</h2>
+                <ul class="less-nav">
+                    <li class="less-nav-item"><a href="#routes" class="less-nav-link">Основы маршрутизации</a></li>
+                    <li class="less-nav-item"><a href="#methods" class="less-nav-link">Доступные методы маршрутизации</a></li>
+                    <li class="less-nav-item"><a href="#embedding" class="less-nav-link">Встраивание маршрутов в HTML</a></li>
+                    <li class="less-nav-item"><a href="#redirect" class="less-nav-link">Редирект маршрутов</a></li>
+                    <li class="less-nav-item"><a href="#list" class="less-nav-link">Список маршрутов</a></li>
+                    <li class="less-nav-item"><a href="#data" class="less-nav-link">Передача данных через маршруты</a></li>
+                    <li class="less-nav-item"><a href="#optional" class="less-nav-link">Опциональные параметры</a></li>
+                    <li class="less-nav-item"><a href="#regular" class="less-nav-link">Регулярные выражения в маршрутах</a></li>
+                    <li class="less-nav-item"><a href="#names" class="less-nav-link">Имена для маршрутов</a></li>
+                    <li class="less-nav-item"><a href="#prefix" class="less-nav-link">Префиксы у маршрутов</a></li>
+                </ul>
+                <div class="less-topic" id="routes">
+                    <h2 class="less-title">Основы маршрутизации</h2>
+                    <p class="less-text">
+                        Маршруты определяют что именно фреймворк будет показывать при обращении к определённому адресу. К примеру базовое использование маршрутов:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-1" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-1">use Illuminate\Support\Facades\Route;
+Route::get('/hello', function () {
+    return 'Hello World';
+});</code></pre>
+                    </div>
+                    <p class="less-text">
+                        В этом примере при нахождении в адресной строке <span class="less-sel">"/greeting"</span>, выводится страница с надписью "Hello World". Давайте посмотрим как это выглядит.
+                    </p>
+                    <p class="less-text">
+                        Для начала нам нужно открыть папку нашего проекта, который мы создали в прошлом уроке, в <span class="less-sel">Visual Studio Code</span>. Уже там нужно открыть файл <span class="less-sel">web.php</span>, который находится в папке <span class="less-sel">routes</span>. Выглядит это примерно так:
+                    </p>
+                    <div class="row">
+                        <img src="../../img/unit-1/theme-2/lesson-4/routes.png" alt="Скриншот содержимого web.php" class="less-img">
+                    </div>
+                    <p class="less-text">
+                        Теперь вставим код выше, для того чтобы посмотреть работу кастомного маршрута.
+                    </p>
+                    <div class="row">
+                        <img src="../../img/unit-1/theme-2/lesson-4/hello_route.png" alt="Скриншот маршрута Hello World" class="less-img">
+                    </div>
+                    <p class="less-text">
+                        Для того чтобы проверить работу маршрута нужно запустить через <span class="less-sel">Open Server</span> наш проект, и добавить в адресную строку сам маршрут, в нашем случае это <span class="less-sel">/hello</span>. Отлично! Мы види <span class="less-sel">"Hello World"</span>.
+                    </p>
+                    <div class="row">
+                        <img src="../../img/unit-1/theme-2/lesson-4/route_result.png" alt="Результат выполнения маршрута" class="less-img">
+                    </div>
+                </div>
+                <div class="less-topic" id="methods">
+                    <h2 class="less-title">Доступные методы маршрутизации</h2>
+                    <p class="less-text">Зачастую маршрутизация происходит с помощью get метода, но также есть и следующие методы:</p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-2" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-2">Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);</code></pre>
+                    </div>
+                </div>
+                <div class="less-topic" id="embedding">
+                    <h2 class="less-title">Встраивание маршрутов в HTML</h2>
+                    <p class="less-text">Если вы хотите встраивать маршруты в HTML код, помните что для методов <span class="less-sel">POST</span>, <span class="less-sel">PUT</span>, <span class="less-sel">PATCH</span>, или <span class="less-sel">DELETE</span> нужно указывать <span class="less-sel">@csrf</span> в коде. В противном случае запрос будет отклонен. </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-3" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-xml code-block" id="code-text-3">&lt;form method="POST" action="/profile"&gt;
+    @csrf
+    ...
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="less-topic" id="redirect">
+                    <h2 class="less-title">Редирект маршрутов</h2>
+                    <p class="less-text">
+                        В Laravel есть возможность редиректа маршрутов. К пример, в коде ниже при переходе по маршруту <span class="less-sel">/here</span> вас отправит не маршрут <span class="less-sel">/there</span>.
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-4" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-4">Route::redirect('/here', '/there');</code></pre>
+                    </div>
+                </div>
+                <div class="less-topic" id="list">
+                    <h2 class="less-title">Список маршрутов</h2>
+                    <p class="less-text">
+                        Также у вас есть возможность через <span class="less-sel">консоль</span> посмотреть список всех маршруто с помощью данной команды:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-5" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-5">php artisan route:list</code></pre>
+                    </div>
+                    <p class="less-text">
+                        В нашем случае выводит следующие маршруты:
+                    </p>
+                    <div class="row">
+                        <img src="../../img/unit-1/theme-2/lesson-4/list.png" alt="Список маршрутов" class="less-img">
+                    </div>
+                </div>
+                <div class="less-topic" id="data">
+                    <h2 class="less-title">Передача данных через маршруты</h2>
+                    <p class="less-text">
+                        С помощью <span class="less-sel">маршрутов</span> можно предавать данные, к примеру в коде ниже, мы передаем в маршруте <span class="less-sel">$id</span>, в зависимости от введенного <span class="less-sel">id</span> в адресную строку и будет вывод результата.
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-6" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-6">Route::get('/user/{id}', function (string $id) {
+    return 'User '.$id;
+});</code></pre>
+                    </div>
+                    <p class="less-text">
+                        К примеру если ввести <span class="less-sel">/users/1</span>, будет выведено <span class="less-sel">1</span>.
+                    </p>
+                </div>
+                <div class="less-topic" id="optional">
+                    <h2 class="less-title">Опциональные параметры</h2>
+                    <p class="less-text">
+                        Иногда вам может потребоваться указать параметр маршрута, который не всегда присутствует в URI. Это можно сделать, поставив знак <span class="less-sel">?</span> после имени параметра. Убедитесь, что соответствующая переменная маршрута имеет значение по умолчанию:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-7" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-7">Route::get('/user/{name?}', function (?string $name = null) {
+    return $name;
+});
+    
+Route::get('/user/{name?}', function (?string $name = 'John') {
+    return $name;
+});</code></pre>
+                    </div>
+                    <p class="less-text">В первом маршруте, если не указать имя мы получим вывод <span class="less-sel">"null"</span>, а во втором уже <span class="less-sel">"John"</span>.</p>
+                </div>
+                <div class="less-topic" id="regular">
+                    <h2 class="less-title">Регулярные выражения в маршрутах</h2>
+                    <p class="less-text">
+                        Вы можете ограничить формат параметров маршрута с помощью метода <span class="less-sel">where</span> для экземпляра маршрута. Метод <span class="less-sel">where</span> принимает имя параметра и регулярное выражение, определяющее, как параметр должен быть ограничен:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-8" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-8">Route::get('/user/{name}', function (string $name) {
+    // ...
+})->where('name', '[A-Za-z]+');
+    
+Route::get('/user/{id}', function (string $id) {
+    // ...
+})->where('id', '[0-9]+');</code></pre>
+                    </div>
+                    <p class="less-text">
+                        Также в Laravel есть готовые шаблоны регулярных выражений.
+                    </p>
+                </div>
+                <div class="less-topic" id="names">
+                    <h2 class="less-title">Имена для маршрутов</h2>
+                    <p class="less-text">
+                        Именованные маршруты позволяют удобно генерировать <span class="less-sel">URL-адреса</span> или перенаправления для определенных маршрутов. Вы можете задать имя маршрута, подключив метод <span class="less-sel">name</span> к определению маршрута:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-9" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-9">Route::get('/user/profile', function () {
+    // ...
+})->name('profile');</code></pre>
+                    </div>
+                </div>
+                <div class="less-topic" id="prefix">
+                    <h2 class="less-title">Префиксы у маршрутов</h2>
+                    <p class="less-text">
+                        Метод <span class="less-sel">prefix</span> можно использовать для префиксации каждого маршрута в группе с заданным <span class="less-sel">URI</span>. Например, вы можете присвоить всем <span class="less-sel">URI</span> маршрутов в группе префикс <span class="less-sel">admin</span>:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-9" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-9">Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center">
+                <a href="../../tests/unit-1/2.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
+                <a href="lesson-5.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-6">
+                    <a class="logo footer-logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-12 d-flex justify-content-sm-end justify-content-center socials">
+                    <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="../../img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
+                    <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="../../img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
+                    <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="../../img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
+                    <a class="footer-nav-link" href="kkostaninkk@gmail.com" target="_blank"><img src="../../img/socials/google.svg" class="footer-icon" alt="Иконка гугл почты"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/noty.min.js"></script>
+    <script src="../../js/copyText.js"></script>
+    <script src="../../js/highlight.min.js"></script>
+    <script src="../../js/php.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
