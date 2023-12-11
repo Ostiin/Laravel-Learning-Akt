@@ -336,6 +336,11 @@ Section Hero стили*/
 }
 
 /*Заголовки*/
+.less-title-link {
+    font-size: 48px;
+    color: white;
+}
+
 .less-main-subtitle {
     margin: 30px 0;
 }

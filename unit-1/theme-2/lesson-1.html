@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/atom-one-dark.min.css">
     <link rel="stylesheet" href="../../css/noty.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Урок 4</title>
+    <title>Урок 1</title>
 </head>
 <body>
     <header class="header">
@@ -41,10 +41,10 @@
     </header>
 
     <main class="main">
-        <div class="section-less">
+        <section class="section-less">
             <div class="less-container">
-                <h1 class="less-main-title"><span class="red">Тема 2</span> - Маршрутизация и контроллеры</h1>
-                <h2 class="less-main-subtitle"><span class="red">Урок 4</span> - Определение маршрутов в Laravel.</h2>
+                <h1 class="less-main-title"><a href="../../training.html" class="less-title-link"><span class="red">Тема 2</span> - Маршрутизация и контроллеры</a></h1>
+                <h2 class="less-main-subtitle"><span class="red">Урок 1</span> - Определение маршрутов в Laravel</h2>
                 <ul class="less-nav">
                     <li class="less-nav-item"><a href="#routes" class="less-nav-link">Основы маршрутизации</a></li>
                     <li class="less-nav-item"><a href="#methods" class="less-nav-link">Доступные методы маршрутизации</a></li>
@@ -80,19 +80,19 @@ Route::get('/hello', function () {
                         Для начала нам нужно открыть папку нашего проекта, который мы создали в прошлом уроке, в <span class="less-sel">Visual Studio Code</span>. Уже там нужно открыть файл <span class="less-sel">web.php</span>, который находится в папке <span class="less-sel">routes</span>. Выглядит это примерно так:
                     </p>
                     <div class="row">
-                        <img src="../../img/unit-1/theme-2/lesson-4/routes.png" alt="Скриншот содержимого web.php" class="less-img">
+                        <img src="../../img/unit-1/theme-2/lesson-1/routes.png" alt="Скриншот содержимого web.php" class="less-img">
                     </div>
                     <p class="less-text">
                         Теперь вставим код выше, для того чтобы посмотреть работу кастомного маршрута.
                     </p>
                     <div class="row">
-                        <img src="../../img/unit-1/theme-2/lesson-4/hello_route.png" alt="Скриншот маршрута Hello World" class="less-img">
+                        <img src="../../img/unit-1/theme-2/lesson-1/hello_route.png" alt="Скриншот маршрута Hello World" class="less-img">
                     </div>
                     <p class="less-text">
                         Для того чтобы проверить работу маршрута нужно запустить через <span class="less-sel">Open Server</span> наш проект, и добавить в адресную строку сам маршрут, в нашем случае это <span class="less-sel">/hello</span>. Отлично! Мы види <span class="less-sel">"Hello World"</span>.
                     </p>
                     <div class="row">
-                        <img src="../../img/unit-1/theme-2/lesson-4/route_result.png" alt="Результат выполнения маршрута" class="less-img">
+                        <img src="../../img/unit-1/theme-2/lesson-1/route_result.png" alt="Результат выполнения маршрута" class="less-img">
                     </div>
                 </div>
                 <div class="less-topic" id="methods">
@@ -158,7 +158,7 @@ Route::options($uri, $callback);</code></pre>
                         В нашем случае выводит следующие маршруты:
                     </p>
                     <div class="row">
-                        <img src="../../img/unit-1/theme-2/lesson-4/list.png" alt="Список маршрутов" class="less-img">
+                        <img src="../../img/unit-1/theme-2/lesson-1/list.png" alt="Список маршрутов" class="less-img">
                     </div>
                 </div>
                 <div class="less-topic" id="data">
@@ -259,11 +259,11 @@ Route::get('/user/{id}', function (string $id) {
                     </div>
                 </div>
             </div>
-            <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center">
+            <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center mt-5">
                 <a href="../../tests/unit-1/2.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
-                <a href="lesson-5.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
+                <a href="lesson-2.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">
