@@ -189,8 +189,13 @@
                         <h5 class="modal-title" id="exampleModalLabel"><span class="red">Вы</span> прошли <span class="red">1 тест</span>, результат:</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        ...
+                    <div class="modal-body" style="white-space: pre-line;">
+                        <div class="modal-body-answer"></div>
+                        <span class="red">Критерии оценивания:</span>
+                        <span>От <span class="red">9</span> правильных ответов - оценка <span class="red">5</span></span>
+                        <span>От <span class="red">7</span> правильных ответов - оценка <span class="red">4</span></span>
+                        <span>От <span class="red">5</span> правильных ответов - оценка <span class="red">3</span></span>
+                        <span>Меньше <span class="red">5</span> правильных ответов - оценка <span class="red">2</span></span>
                     </div>
                     <div class="modal-footer">
                         <a href="../../training.html" class="btn btn-primary">К урокам</a>
@@ -250,7 +255,16 @@
                     }  
                 }
             }
-            document.getElementsByClassName('modal-body')[0].textContent = "Вы ответили правильно на " + trueQue + "/10 вопросов";
+            if (trueQue < 5) {
+                res = 2;
+            } else if (trueQue >= 5 & trueQue < 7) {
+                res = 3;
+            } else if (trueQue >= 7 & trueQue < 9) {
+                res = 4;
+            } else {
+                res = 5;
+            }
+            document.getElementsByClassName('modal-body-answer')[0].textContent = "Вы ответили правильно на " + trueQue + "/10 вопросов, ваша оценка = " + res;
         });
     </script>
 </body>
