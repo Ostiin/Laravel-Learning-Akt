@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../css/noty.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Урок 2</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-fluid d-flex">
+                        <a class="logo d-flex align-items-center" href="../../index.html">
+                            <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                            <div class="logo-title">
+                                <h3 class="logo-upper red">
+                                    Laravel 10
+                                </h3>
+                                <span class="logo-lower">
+                                    (на русском языке)
+                                </span>
+                            </div>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+                        <div class="collapse navbar-collapse" id="navbarNav">  
+                            <div class="header-links d-flex justify-content-md-end justify-content-center flex-md-row flex-column text-center">
+                                <a class="header-nav-link me-md-4 mb-md-0 mt-md-0 me-0 mb-3 mt-5" href="https://laravel.com/docs/10.x" target="_blank">Документация</a>
+                                <a class="header-nav-link me-md-4 mb-md-0 me-0 mb-3" href="../../index.html#about">О сайте</a>
+                                <a class="header-nav-link" href="../../training.html">Обучение</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section-less">
+            <div class="less-container">
+                <h1 class="less-main-title"><a href="../../training.html" class="less-title-link"><span class="red">Тема 3</span> - Представления и шаблоны</a></h1>
+                <h2 class="less-main-subtitle"><span class="red">Урок 2</span> - Создание контроллеров и их методов</h2>
+                <ul class="less-nav">
+                    <li class="less-nav-item"><a href="#controllers" class="less-nav-link">Создание контроллеров</a></li>
+                    <ul class="less-subnav">
+                        <li class="less-subnav-item">
+                            <a href="#use" class="less-subnav-link">Для чего нужны контроллеры</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#default" class="less-subnav-link">Создание стандартного контроллера</a>
+                        </li>
+                        <li class="less-subnav-item">
+                            <a href="#route" class="less-subnav-link">Вызов контроллера по маршруту</a>
+                        </li>
+                    </ul>
+                </ul>
+                <div class="less-topic" id="controllers">
+                    <h2 class="less-title">Создание контроллеров</h2>
+                    <div class="less-subtopic" id="use">
+                        <h3 class="less-subtitle">Для чего нужны контроллеры</h3>
+                        <p class="less-text">
+                            Контроллеры в Laravel используются для обработки запросов и управления логикой приложения. Они играют важную роль в архитектуре <span class="less-sel">MVC</span> (Model-View-Controller) фреймворка Laravel.
+                        </p>
+                        <p class="less-text">
+                            Контроллеры в Laravel помогают разделить логику приложения на отдельные компоненты, что обеспечивает более чистый и организованный код. Они принимают запросы от пользователей, взаимодействуют с моделями и представлениями, и возвращают результаты обратно пользователю.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="default">
+                        <h3 class="less-subtitle">Создание стандартного контроллера</h3>
+                        <p class="less-text">
+                            Чтобы быстро сгенерировать новый контроллер, можно выполнить команду <span class="less-sel">make:controller Artisan</span>. По умолчанию все контроллеры для вашего приложения хранятся в каталоге <span class="less-sel">app/Http/Controllers</span>:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-1" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-1">php artisan make:controller UserController</code></pre>
+                        </div>
+                        <p class="less-text">
+                            Выполнив данную команду в консоли, мы получаем следующий результат:
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-2/lesson-2/console.png" alt="Скриншот консоли" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            Давайте убедимся, что контроллер создался. Для этого мы перейдем в папку <span class="less-sel">app/Http/Controllers/UserController.php</span>. Этот файл должен быть таким:
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-2/lesson-2/controller.png" alt="Скриншот содержимого контроллера" class="less-img">
+                        </div>
+                        <p class="less-text">
+                            Теперь можно создать метод, который будет вовзращать сообщение <span class="less-sel">"Тест Контроллера"</span>, код будет выглядеть следующим образом:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-2" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-2">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function index() {
+        return 'Тест Контроллера';
+    }
+}</code></pre>
+                        </div>
+                        <p class="less-text">
+                            В данном случае <span class="less-sel">index</span> - метод контроллера, который возвращает наш текст.
+                        </p>
+                    </div>
+                    <div class="less-subtopic" id="route">
+                        <h3 class="less-subtitle">Вызов контроллера по маршруту</h3>
+                        <p class="less-text">
+                            Для того чтобы вызвать контроллер по маршруту, нужно создать этот маршрут. Переходим в уже знакомый нам файл <span class="less-sel">web.php</span>, и для начала подключаем наш контроллер с помощью данного кода:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-3" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-3">use App\Http\Controllers\UserController;</code></pre>
+                        </div>
+                        <p class="less-text">
+                            После этого мы добавляем новый маршрут:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-4" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-4">Route::get('/test', [UserController::class, 'index']);</code></pre>
+                        </div>
+                        <p class="less-text">
+                            В данном коде <span class="less-sel">/test</span> - маршрут, <span class="less-sel">UserController::class</span> - определение контроллера, а <span class="less-sel">index</span> - вызов метода у контроллера. В целом код маршрутов выглядит следующим образом:
+                        </p>
+                        <div class="code">
+                            <div class="copy-icon-block">
+                                <svg class="copy-icon" id="code-btn-5" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                                </svg>
+                            </div>
+                            <pre><code class="language-php code-block" id="code-text-5">&lt;?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+Route::get('/user/{id}', function (string $id) {
+    return 'User '.$id;
+});
+
+Route::get('/test', [UserController::class, 'index']);</code></pre>
+                        </div>
+                        <p class="less-text">
+                            Перейдя по нашему маршруту, мы получаем следующий результат:
+                        </p>
+                        <div class="row">
+                            <img src="../../img/unit-1/theme-2/lesson-2/result.png" alt="Скриншот вывода контроллера" class="less-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center mt-5">
+                    <a href="../../tests/unit-1/3.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
+                    <a href="lesson-3.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-6">
+                    <a class="logo footer-logo d-flex align-items-center" href="../../index.html">
+                        <img src="../../img/logo.svg" alt="Логотип" class="logo-img">
+                        <div class="logo-title">
+                            <h3 class="logo-upper red">
+                                Laravel 10
+                            </h3>
+                            <span class="logo-lower">
+                                (на русском языке)
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-12 d-flex justify-content-sm-end justify-content-center socials">
+                    <a class="footer-nav-link" href="https://vk.com/ostaniin" target="_blank"><img src="../../img/socials/vk.svg" class="footer-icon" alt="Иконка вконтакте"></a>
+                    <a class="footer-nav-link" href="https://t.me/OSTENB" target="_blank"><img src="../../img/socials/tg.svg" class="footer-icon" alt="Иконка телеграма"></a>
+                    <a class="footer-nav-link" href="https://discordapp.com/users/637660959758090241/" target="_blank"><img src="../../img/socials/ds.svg" class="footer-icon" alt="Иконка дискорда"></a>
+                    <a class="footer-nav-link" href="kkostaninkk@gmail.com" target="_blank"><img src="../../img/socials/google.svg" class="footer-icon" alt="Иконка гугл почты"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/noty.min.js"></script>
+    <script src="../../js/copyText.js"></script>
+    <script src="../../js/highlight.min.js"></script>
+    <script src="../../js/php.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
