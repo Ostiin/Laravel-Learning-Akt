@@ -44,82 +44,91 @@
         <section class="section-less">
             <div class="less-container">
                 <h1 class="less-main-title"><a href="../../training.html" class="less-title-link"><span class="red">Тема 3</span> - Представления и шаблоны</a></h1>
-                <h2 class="less-main-subtitle"><span class="red">Урок 3</span> - Применение middleware.</h2>
+                <h2 class="less-main-subtitle"><span class="red">Урок 3</span> - Использование компонентов и директив Blade.</h2>
                 <ul class="less-nav">
-                    <li class="less-nav-item"><a href="#middleware" class="less-nav-link">Применение middleware</a></li>
-                    <ul class="less-subnav">
-                        <li class="less-subnav-item">
-                            <a href="#use" class="less-subnav-link">Для чего нужен middleware</a>
-                        </li>
-                        <li class="less-subnav-item">
-                            <a href="#default" class="less-subnav-link">Создание стандартного middleware</a>
-                        </li>
-                    </ul>
+                    <li class="less-nav-item"><a href="#introduction" class="less-nav-link">Введение</a></li>
+                    <li class="less-nav-item"><a href="#if" class="less-nav-link">Конструкция if-else</a></li>
+                    <li class="less-nav-item"><a href="#php" class="less-nav-link">Внедрение PHP-кода</a></li>
+                    <li class="less-nav-item"><a href="#section" class="less-nav-link">Работа с секциями</a></li>
                 </ul>
-                <div class="less-topic" id="middleware">
-                    <h2 class="less-title">Применение middleware.</h2>
-                    <div class="less-subtopic" id="use">
-                        <h3 class="less-subtitle">Для чего нужен middleware</h3>
-                        <p class="less-text">
-                            <span class="less-sel">Middleware</span> (посредники) в Laravel являются фильтрами для обработки <span class="less-sel">HTTP-запросов</span>. Они позволяют выполнять различные задачи, такие как проверка аутентификации пользователя. В случае, если пользователь не залогинен, middleware перенаправляет его на страницу логина. Если же пользователь уже залогинен, <span class="less-sel">middleware</span> не вмешивается в обработку запроса и передает его дальше по цепочке <span class="less-sel">middleware</span>-посредников к самому приложению.
-                        </p>
-                        <p class="less-text">
-                            Однако, проверка авторизации - это не единственная задача, которую могут выполнять <span class="less-sel">middlewares</span>. Они также могут добавлять специальные заголовки (например, CORS http-ответ вашего приложения) или выполнять логирование всех <span class="less-sel">HTTP-запросов</span>.
-                        </p>
-                    </div>
-                    <div class="less-subtopic" id="default">
-                        <h3 class="less-subtitle">Создание стандартного middleware</h3>
-                        <p class="less-text">
-                            Чтобы создать новый <span class="less-sel">middleware</span>, воспользуйтесь командой make:middleware Artisan:
-                        </p>
-                        <div class="code">
-                            <div class="copy-icon-block">
-                                <svg class="copy-icon" id="code-btn-1" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
-                                </svg>
-                            </div>
-                            <pre><code class="language-php code-block" id="code-text-1">php artisan make:middleware EnsureTokenIsValid</code></pre>
+                <div class="less-topic" id="introduction">
+                    <h2 class="less-title">Введение</h2>
+                    <p class="less-text">
+                        Blade - это простой, но мощный шаблонизатор, который входит в состав Laravel. В отличие от некоторых шаблонизаторов PHP, Blade не ограничивает вас в использовании обычного PHP-кода в ваших шаблонах. На самом деле, все шаблоны Blade компилируются в обычный PHP-код и кэшируются до тех пор, пока не будут изменены, что означает, что Blade добавляет практически нулевые накладные расходы в ваше приложение.
+                    </p>
+                </div>
+                <div class="less-topic" id="if">
+                    <h2 class="less-title">Конструкция if-else</h2>
+                    <p class="less-text">
+                        Blade может содержать в себе конструкцию <span class="less-sel">if-else</span>, а также другие конструкции PHP. Их работа выглядит следующим образом:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-1" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
                         </div>
-                        <p class="less-text">
-                            Эта команда поместит новый класс <span class="less-sel">EnsureTokenIsValid</span> в каталог <span class="less-sel">app/Http/Middleware</span>. В этом промежуточном ПО мы будем разрешать доступ к маршруту только в том случае, если введенный токен соответствует заданному значению. В противном случае мы будем перенаправлять пользователей обратно на домашний URI:
-                        </p>
-                        <div class="code">
-                            <div class="copy-icon-block">
-                                <svg class="copy-icon" id="code-btn-2" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
-                                </svg>
-                            </div>
-                            <pre><code class="language-php code-block" id="code-text-2">&lt;?php
-
-namespace App\Http\Middleware;
-    
-use Closure;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-    
-class EnsureTokenIsValid
-{
-    /**
-        * Handle an incoming request.
-        *
-        * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-        */
-    public function handle(Request $request, Closure $next): Response
-    {
-        if ($request->input('token') !== 'my-secret-token') {
-            return redirect('home');
-        }
-    
-        return $next($request);
-    }
-}</code></pre>
-                        </div>
-                        <p class="less-text">На данном этапе это все, что нужно знать о <span class="less-sel">middleware</span>.</p>
+                        <pre><code class="language-php code-block" id="code-text-1">@if ($data === 1)
+    Условие 1 сработало!
+@elseif ($data > 1)
+    Условие 2 сработало!
+@else
+    Ни одно условие не сработало!
+@endif</code></pre>
                     </div>
+                </div>
+                <div class="less-topic" id="php">
+                    <h2 class="less-title">Внедрение PHP-кода</h2>
+                    <p class="less-text">
+                        Blade также может содержать в себе PHP-код. Его интеграция выглядит следущим образом:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-2" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="language-php code-block" id="code-text-2">@php
+    // Ваш PHP код
+@endphp</code></pre>
+                    </div>
+                </div>
+                <div class="less-topic" id="section">
+                    <h2 class="less-title">Работа с секциями</h2>
+                    <p class="less-text">
+                        С помощью <span class="less-sel">Blade</span> вы можете создавать секции и уже в последствии применять их в других шаблонах. Для этого в нашем представлении <span class="less-sel">resources/views/first-view.blade.php</span> вставляем следущий код:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-3" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="code-block" id="code-text-3">@section('test')
+&lt;div&gt;
+    Содержимое секции
+&lt;/div&gt;
+@stop</code></pre>
+                    </div>
+                    <p class="less-text">
+                        В свою очередб в представлении <span class="less-sel">resources/views/second-view.blade.php</span> вставляем следущий код:
+                    </p>
+                    <div class="code">
+                        <div class="copy-icon-block">
+                            <svg class="copy-icon" id="code-btn-4" onclick="copyText(this)" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C8.34315 2 7 3.34315 7 5V5.00068C5.92115 5.00539 5.32954 5.04261 4.88886 5.33706C4.67048 5.48298 4.48298 5.67048 4.33706 5.88886C4 6.39331 4 7.09554 4 8.5V18C4 19.8856 4 20.8284 4.58579 21.4142C5.17157 22 6.11438 22 8 22H16C17.8856 22 18.8284 22 19.4142 21.4142C20 20.8284 20 19.8856 20 18V8.5C20 7.09554 20 6.39331 19.6629 5.88886C19.517 5.67048 19.3295 5.48298 19.1111 5.33706C18.6705 5.04261 18.0789 5.00539 17 5.00068V5C17 3.34315 15.6569 2 14 2H10ZM10 5C10 4.44772 10.4477 4 11 4H13C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5ZM9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H9ZM9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H9Z" fill="#82848d"/>
+                            </svg>
+                        </div>
+                        <pre><code class="code-block" id="code-text-4">@include('first-view')
+@yield('name')</code></pre>
+                    </div>
+                    <p class="less-text">
+                        Таким образом мы создали секцию, и отобразили ее в другом представлении. В нашем случае <span class="less-sel">@include</span> занимается подключением представления, а <span class="less-sel">@yield</span> выводом определенной секции.
+                    </p>
                 </div>
                 <div class="less-btns d-flex flex-sm-row flex-column justify-content-center align-items-center mt-5">
                     <a href="../../tests/unit-1/3.html" class="main-btn">К ТЕСТИРОВАНИЮ</a>
-                    <a href="lesson-3.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
+                    <a href="../theme-4/lesson-1.html" class="secondary-btn mt-sm-0 mt-4">СЛЕДУЮЩИЙ УРОК</a>
                 </div>
             </div>
         </section>

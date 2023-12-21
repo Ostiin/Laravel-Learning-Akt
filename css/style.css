@@ -577,6 +577,10 @@ input[type=radio]:checked + label:before {
         margin-right: 0 !important;
     }
 
+    .less-title-link {
+        font-size: 36px;
+    }
+
     .less-text, .less-sel, .less-link {
         font-size: 14px;
     }
