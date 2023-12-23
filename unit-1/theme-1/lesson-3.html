@@ -42,11 +42,14 @@
     </header>
 
     <main class="main">
+        <a class="up-icon" href="#top" id="up-icon">
+            <img class="up-icon-img" src="../../img/icons/go-up.svg" alt="Иконка поднятия к верхнему экрану">
+        </a>
         <section class="section-less">
             <div class="less-container">
                 <h1 class="less-main-title"><a href="../../training.html" class="less-title-link"><span class="red">Тема 1</span> - Введение в Laravel</a></h1>
                 <h2 class="less-main-subtitle"><span class="red">Урок 3</span> - Установка Laravel и настройка окружения разработки</h2>
-                <ul class="less-nav">
+                <ul class="less-nav up-block">
                     <li class="less-nav-item"><a href="#programs" class="less-nav-link">Установка программ</a></li>
                     <ul class="less-subnav">
                         <li class="less-subnav-item">
@@ -203,5 +206,24 @@
     <script src="../../js/highlight.min.js"></script>
     <script src="../../js/php.min.js"></script>
     <script>hljs.highlightAll();</script>
+    <script>
+        let up_icon = document.getElementById('up-icon');
+        // Создаем новый экземпляр Intersection Observer
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+            // Если div становится видимым
+            if (entry.isIntersecting) {
+                up_icon.style.display = 'none';
+            } else {
+                up_icon.style.display = 'block';
+            }
+            });
+        });
+
+        // Находим целевой div
+        let up_block = document.querySelector('.up-block');
+        // Наблюдаем за изменениями видимости div
+        observer.observe(up_block);
+    </script>
 </body>
 </html>

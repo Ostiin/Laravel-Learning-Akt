@@ -211,6 +211,20 @@ input[type="radio"]{
     width: 100%;
 }
 
+/*Иконка "на верх"*/
+.up-icon {
+    display: none;
+    width: 50px;
+    position: fixed;
+    bottom: 15vh;
+    right: 5vh;
+    z-index: 100;
+}
+
+.up-icon-img {
+    width: 100%;
+}
+
 /*ГЛАВНАЯ СТРАНИЦА
 Section Hero стили*/
 .section-hero {
@@ -603,5 +617,9 @@ input[type=radio]:checked + label:before {
         width: 140px;
         height: 30px;
         font-size: 14px;
+    }
+
+    .up-icon {
+        right: 1vh;
     }
 }
