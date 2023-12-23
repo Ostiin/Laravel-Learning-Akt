@@ -46,135 +46,123 @@
                 <h1 class="test-title text-center"><span class="red">Тест 3</span> - Представления и шаблоны</h1>
                 <form action="" class="test-form">
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">1.</span> Для чего используют Laravel?</h3>
+                        <h3 class="test-form-title"><span class="red">1.</span> Как создать представление?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_1" id="que_1-1" class="que_radio" value="1"><label for="que_1-1" class="que-label">back-end</label>
+                            <input type="radio" name="que_1" id="que_1-1" class="que_radio" value="1"><label for="que_1-1" class="que-label">php artisan make:pred first-view</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_1" id="que_1-2" class="que_radio" value="2"><label for="que_1-2" class="que-label">front-end</label>
+                            <input type="radio" name="que_1" id="que_1-2" class="que_radio" value="2"><label for="que_1-2" class="que-label">php artisan make:blade first-view</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_1" id="que_1-3" class="que_radio" value="3"><label for="que_1-3" class="que-label">верстка</label>
-                        </div>
-                    </div>
-                    <div class="que">
-                        <h3 class="test-form-title"><span class="red">2.</span> Как расшифровывается MVC?</h3>
-                        <div class="test-radio">
-                            <input type="radio" name="que_2" id="que_2-1" class="que_radio" value="1"><label for="que_2-1" class="que-label">Mail View Company</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_2" id="que_2-2" class="que_radio" value="2"><label for="que_2-2" class="que-label">Microsoft Visio Center</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_2" id="que_2-3" class="que_radio" value="3"><label for="que_2-3" class="que-label">Model View Controller</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_2" id="que_2-4" class="que_radio" value="4"><label for="que_2-4" class="que-label">My Vender Crystal</label>
+                            <input type="radio" name="que_1" id="que_1-3" class="que_radio" value="3"><label for="que_1-3" class="que-label">php artisan make:view first-view</label>
                         </div>
                     </div>
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">3.</span> Как называется интерфейс командной строки, включенный в Laravel?</h3>
+                        <h3 class="test-form-title"><span class="red">2.</span> Как вернуть представление в маршруте?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_3" id="que_3-1" class="que_radio" value="1"><label for="que_3-1" class="que-label">Arcotel</label>
+                            <input type="radio" name="que_2" id="que_2-1" class="que_radio" value="1"><label for="que_2-1" class="que-label">return pred('first-view');</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_3" id="que_3-2" class="que_radio" value="2"><label for="que_3-2" class="que-label">Model</label>
+                            <input type="radio" name="que_2" id="que_2-2" class="que_radio" value="2"><label for="que_2-2" class="que-label">return view('first-view');</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_3" id="que_3-3" class="que_radio" value="3"><label for="que_3-3" class="que-label">Artisan</label>
-                        </div>
-                    </div>
-                    <div class="que">
-                        <h3 class="test-form-title"><span class="red">4.</span> Что такое Blade в Laravel?</h3>
-                        <div class="test-radio">
-                            <input type="radio" name="que_4" id="que_4-1" class="que_radio" value="1"><label for="que_4-1" class="que-label">Шаблонизатор</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_4" id="que_4-2" class="que_radio" value="2"><label for="que_4-2" class="que-label">Игра такая</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_4" id="que_4-3" class="que_radio" value="3"><label for="que_4-3" class="que-label">Инструмент для взаимодействия с БД</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_4" id="que_4-4" class="que_radio" value="4"><label for="que_4-4" class="que-label">Функция валидации</label>
+                            <input type="radio" name="que_2" id="que_2-3" class="que_radio" value="3"><label for="que_2-3" class="que-label">return blade('first-view');</label>
                         </div>
                     </div>
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">5.</span> Как называется встроенная в Laravel система тестирования?</h3>
+                        <h3 class="test-form-title"><span class="red">3.</span> Где находятся представления?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_5" id="que_5-1" class="que_radio" value="1"><label for="que_5-1" class="que-label">Тестирование черным ящиком</label>
+                            <input type="radio" name="que_3" id="que_3-1" class="que_radio" value="1"><label for="que_3-1" class="que-label">views</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_5" id="que_5-2" class="que_radio" value="2"><label for="que_5-2" class="que-label">PHP Unit</label>
+                            <input type="radio" name="que_3" id="que_3-2" class="que_radio" value="2"><label for="que_3-2" class="que-label">resources/blades</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_5" id="que_5-3" class="que_radio" value="3"><label for="que_5-3" class="que-label">Unit Test</label>
-                        </div>
-                    </div>
-                    <div class="que">
-                        <h3 class="test-form-title"><span class="red">6.</span> Где по умолчанию хранится index.php?</h3>
-                        <div class="test-radio">
-                            <input type="radio" name="que_6" id="que_6-1" class="que_radio" value="1"><label for="que_6-1" class="que-label">views</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_6" id="que_6-2" class="que_radio" value="2"><label for="que_6-2" class="que-label">resources</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_6" id="que_6-3" class="que_radio" value="3"><label for="que_6-3" class="que-label">public</label>
+                            <input type="radio" name="que_3" id="que_3-3" class="que_radio" value="3"><label for="que_3-3" class="que-label">resources/views</label>
                         </div>
                     </div>
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">7.</span> Какой локальный сервер мы используем в уроках?</h3>
+                        <h3 class="test-form-title"><span class="red">4.</span> Как использовать переменные в представлении?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_7" id="que_7-1" class="que_radio" value="1"><label for="que_7-1" class="que-label">WampServer</label>
+                            <input type="radio" name="que_4" id="que_4-1" class="que_radio" value="1"><label for="que_4-1" class="que-label">{{ $var }}</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_7" id="que_7-2" class="que_radio" value="2"><label for="que_7-2" class="que-label">The Uniform Server</label>
+                            <input type="radio" name="que_4" id="que_4-2" class="que_radio" value="2"><label for="que_4-2" class="que-label">&lt;?= $var ?&gt;</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_7" id="que_7-3" class="que_radio" value="3"><label for="que_7-3" class="que-label">Winginx</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_7" id="que_7-4" class="que_radio" value="4"><label for="que_7-4" class="que-label">Open Server</label>
+                            <input type="radio" name="que_4" id="que_4-3" class="que_radio" value="3"><label for="que_4-3" class="que-label">echo $var</label>
                         </div>
                     </div>
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">8.</span> Какая команда загружает Laravel проект?</h3>
+                        <h3 class="test-form-title"><span class="red">5.</span> Как расширить представление?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_8" id="que_8-1" class="que_radio" value="1"><label for="que_8-1" class="que-label">composer create-project laravel/laravel .</label>
+                            <input type="radio" name="que_5" id="que_5-1" class="que_radio" value="1"><label for="que_5-1" class="que-label">@add('view')</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_8" id="que_8-2" class="que_radio" value="2"><label for="que_8-2" class="que-label">composer create-project laravel</label>
+                            <input type="radio" name="que_5" id="que_5-2" class="que_radio" value="2"><label for="que_5-2" class="que-label">@share('view')</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_8" id="que_8-3" class="que_radio" value="3"><label for="que_8-3" class="que-label">composer create-project laravel download</label>
-                        </div>
-                    </div>
-                    <div class="que">
-                        <h3 class="test-form-title"><span class="red">9.</span> Какую страницу по умолчанию выводит проект на Laravel?</h3>
-                        <div class="test-radio">
-                            <input type="radio" name="que_9" id="que_9-1" class="que_radio" value="1"><label for="que_9-1" class="que-label">Ничего не выводит</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_9" id="que_9-2" class="que_radio" value="2"><label for="que_9-2" class="que-label">Документация Laravel</label>
-                        </div>
-                        <div class="test-radio">
-                            <input type="radio" name="que_9" id="que_9-3" class="que_radio" value="3"><label for="que_9-3" class="que-label">Страница от Laravel с информацией</label>
+                            <input type="radio" name="que_5" id="que_5-3" class="que_radio" value="3"><label for="que_5-3" class="que-label">@extends('view')</label>
                         </div>
                     </div>
                     <div class="que">
-                        <h3 class="test-form-title"><span class="red">10.</span> Какую версию PHP используют в уроках?</h3>
+                        <h3 class="test-form-title"><span class="red">6.</span> Как работает if в Blade?</h3>
                         <div class="test-radio">
-                            <input type="radio" name="que_10" id="que_10-1" class="que_radio" value="1"><label for="que_10-1" class="que-label">PHP 7.9</label>
+                            <input type="radio" name="que_6" id="que_6-1" class="que_radio" value="1"><label for="que_6-1" class="que-label">@if ... @endif</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_10" id="que_10-2" class="que_radio" value="2"><label for="que_10-2" class="que-label">PHP 8.0</label>
+                            <input type="radio" name="que_6" id="que_6-2" class="que_radio" value="2"><label for="que_6-2" class="que-label">&lt;?php if: ?&gt;</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_10" id="que_10-3" class="que_radio" value="3"><label for="que_10-3" class="que-label">PHP 8.1</label>
+                            <input type="radio" name="que_6" id="que_6-3" class="que_radio" value="3"><label for="que_6-3" class="que-label">if-else</label>
+                        </div>
+                    </div>
+                    <div class="que">
+                        <h3 class="test-form-title"><span class="red">7.</span> Как выглядит валидация форм?</h3>
+                        <div class="test-radio">
+                            <input type="radio" name="que_7" id="que_7-1" class="que_radio" value="1"><label for="que_7-1" class="que-label">$validated = validate(['правила валидации']);</label>
                         </div>
                         <div class="test-radio">
-                            <input type="radio" name="que_10" id="que_10-4" class="que_radio" value="4"><label for="que_10-4" class="que-label">PHP 8.2</label>
+                            <input type="radio" name="que_7" id="que_7-2" class="que_radio" value="2"><label for="que_7-2" class="que-label">$validated = $request(['правила валидации']);</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_7" id="que_7-3" class="que_radio" value="3"><label for="que_7-3" class="que-label">$validated = $request->validate(['правила валидации']);</label>
+                        </div>
+                    </div>
+                    <div class="que">
+                        <h3 class="test-form-title"><span class="red">8.</span> Как получить передаваемые данные из формы в другом представление?</h3>
+                        <div class="test-radio">
+                            <input type="radio" name="que_8" id="que_8-1" class="que_radio" value="1"><label for="que_8-1" class="que-label">$var</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_8" id="que_8-2" class="que_radio" value="2"><label for="que_8-2" class="que-label">$_REQUEST['var']</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_8" id="que_8-3" class="que_radio" value="3"><label for="que_8-3" class="que-label">$_DATA['var']</label>
+                        </div>
+                    </div>
+                    <div class="que">
+                        <h3 class="test-form-title"><span class="red">9.</span> Как вставить PHP код в Blade?</h3>
+                        <div class="test-radio">
+                            <input type="radio" name="que_9" id="que_9-1" class="que_radio" value="1"><label for="que_9-1" class="que-label">&lt;?php ... ?&gt;</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_9" id="que_9-2" class="que_radio" value="2"><label for="que_9-2" class="que-label">@php ... @endphp</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_9" id="que_9-3" class="que_radio" value="3"><label for="que_9-3" class="que-label">&lt;? ... ?&gt;</label>
+                        </div>
+                    </div>
+                    <div class="que">
+                        <h3 class="test-form-title"><span class="red">10.</span> Как выделить секцию в Blade?</h3>
+                        <div class="test-radio">
+                            <input type="radio" name="que_10" id="que_10-1" class="que_radio" value="1"><label for="que_10-1" class="que-label">@section('name') ... @endsection</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_10" id="que_10-2" class="que_radio" value="2"><label for="que_10-2" class="que-label">@section('name')</label>
+                        </div>
+                        <div class="test-radio">
+                            <input type="radio" name="que_10" id="que_10-3" class="que_radio" value="3"><label for="que_10-3" class="que-label">@block('name') ... @endblock</label>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -187,7 +175,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><span class="red">Вы</span> прошли <span class="red">1 тест</span>, результат:</h5>
+                        <h5 class="modal-title" id="exampleModalLabel"><span class="red">Вы</span> прошли <span class="red">3 тест</span>, результат:</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" style="white-space: pre-line;">
@@ -200,7 +188,7 @@
                     </div>
                     <div class="modal-footer">
                         <a href="../../training.html" class="btn btn-primary">К урокам</a>
-                        <a href="1.html" class="btn btn-secondary">Пройти еще раз</a>
+                        <a href="3.html" class="btn btn-secondary">Пройти еще раз</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +223,7 @@
 
     <script src="../../js/bootstrap.min.js"></script>
     <script>
-        let arr = [1, 3, 3, 1, 2, 3, 4, 1, 3, 3,];
+        let arr = [3, 2, 3, 1, 3, 1, 3, 2, 2, 1,];
         let radios = document.querySelectorAll('input[type="radio"]');
         let button = document.querySelector('#resBtn');
 
